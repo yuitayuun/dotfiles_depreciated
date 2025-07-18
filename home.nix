@@ -22,8 +22,6 @@
     wine    
     gparted
     jq
-    gh
-    lazygit
     fastfetch
     wlsunset
     bitwarden

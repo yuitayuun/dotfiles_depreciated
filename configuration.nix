@@ -16,7 +16,6 @@
     #enable flakes and nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
   environment.systemPackages = with pkgs; [
-  git
   walker
   pokemon-colorscripts-mac
   zoxide
