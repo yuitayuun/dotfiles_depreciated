@@ -13,6 +13,10 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+  services.logind = {
+    lidSwitch = "sleep";
+  };
+
   fileSystems."/" =
     { device = "/dev/disk/by-uuid/a43d1e3c-d701-4594-a393-8744266df34f";
       fsType = "ext4";
