@@ -13,6 +13,8 @@
   boot.kernelModules = [ "kvm-intel" ];
   boot.extraModulePackages = [ ];
 
+
+  systemd.sleep.extraConfig = "[Sleep]\nMemorySleepMode=deep";
   services.logind = {
     lidSwitch = "sleep";
   };
