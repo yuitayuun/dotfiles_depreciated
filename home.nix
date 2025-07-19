@@ -35,6 +35,7 @@
      # Compatibility        
     gamescope
     nix-alien
+    heroic
   ];
 
   home.pointerCursor = {
