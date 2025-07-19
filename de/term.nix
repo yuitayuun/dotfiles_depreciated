@@ -86,12 +86,6 @@
         };
         auto-format = true;
       };
-      themes = {
-        ayu_transparent = {
-          "inherits" = "ayu_evolve";
-          "ui.background" = { };
-        };
-      };
     };
 
     languages = {
@@ -107,6 +101,12 @@
         }
       ];
     };
+      themes = {
+        ayu_transparent = {
+          "inherits" = "ayu_evolve";
+          "ui.background" = { };
+        };
+      };
   };
 
   # Fish!
