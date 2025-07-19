@@ -145,6 +145,7 @@
     ",n" = "yazi ~/dotfiles";
     ",ss" = "sudo nixos-rebuild switch --flake ~/dotfiles";
     ",k" = "hx ~/dotfiles/keeb.nix";
+    ",g" = "lazygit -p ~/dotfiles";
   };
 
   # Point to the external theme file
