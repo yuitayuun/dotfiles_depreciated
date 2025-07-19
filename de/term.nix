@@ -86,6 +86,12 @@
         };
         auto-format = true;
       };
+      themes = {
+        ayu_transparent = {
+          "inherits" = "ayu_evolve";
+          "ui.background" = { };
+        };
+      };
     };
 
     languages = {
@@ -140,6 +146,12 @@
     ",ss" = "sudo nixos-rebuild switch --flake ~/dotfiles";
     ",k" = "hx ~/dotfiles/keeb.nix";
   };
+
+  # Point to the external theme file
+  home.file.".config/kitty/kitty-colors.conf".source = ./kitty-colors.conf;
+
+
+
 
   
 }

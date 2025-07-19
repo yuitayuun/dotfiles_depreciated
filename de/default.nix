@@ -723,13 +723,6 @@
 
 
 
-  home.file.".config/kitty/kitty-colors.conf".source = ./kitty-colors.conf;
-
-
-
-  # Point to the external theme file
-  home.file.".config/helix/themes/ayu_transparent.toml".source = ./ayu_transparent.toml;
-
 
   # GTK Theme!
   gtk.enable = true;
