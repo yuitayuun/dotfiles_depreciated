@@ -34,6 +34,8 @@
   evtest
   usbutils
   bat
+  gparted
+  via
   # catppuccin-gtk
   # magnetic-catppuccin-gtk  
   #nautilus

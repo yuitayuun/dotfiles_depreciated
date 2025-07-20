@@ -1,6 +1,14 @@
 { inputs, config, pkgs, ... }:
 {
 
+  # Via
+  services.udev.packages = with pkgs; [
+    via
+  ];
+  services.udev.extraRules = ''
+    KERNEL=="hidraw*", SUBSYSTEM=="hidraw", ATTRS{serial}=="*vial:f64c2b3c*", MODE="0660", GROUP="users", TAG+="uaccess", TAG+="udev-acl"
+  '';
+
   # Fcitx5
   i18n.inputMethod = {
     type = "fcitx5";
