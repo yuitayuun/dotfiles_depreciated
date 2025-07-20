@@ -722,6 +722,7 @@
    };  
 
   
+  home.file.".config/way-edges/battery.sh".source = ./battery.sh;
 
 
 
