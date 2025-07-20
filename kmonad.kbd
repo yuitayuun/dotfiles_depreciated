@@ -18,7 +18,7 @@
   tab   q    w    e    r    t    y    u    i    o    p    [    ]  \
   lctl   a    s    d    f    g    h    j    k    l    ;    '       ret
   lsft  z    x    c    v    b    n    m    ,    .    /            rsft
-  esc  wkup lmet lalt          spc        ralt  kana  pgup up   pgdn
+  esc  wkup lmet lalt                spc                ralt  kana  pgup up   pgdn
                                                                     left down rght
 )
 
