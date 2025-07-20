@@ -38,7 +38,6 @@
     heroic
     isoimagewriter
     vial
-    qmk-udev-rules
   ];
 
   home.pointerCursor = {

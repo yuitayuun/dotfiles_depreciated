@@ -36,6 +36,8 @@
   bat
   gparted
   via
+  qmk-udev-rules
+  
   # catppuccin-gtk
   # magnetic-catppuccin-gtk  
   #nautilus
