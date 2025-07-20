@@ -578,7 +578,7 @@
           "preset" = {
             "type" = "custom";
             "update-interval" = 1000;
-            "update-command" = "/home/yui/dotfiles/de/battery.sh";
+            "update-command" = "/home/yui/.config/way-edges/battery.sh";
           };
         }
         {
