@@ -101,7 +101,7 @@
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
-            home-manager.users.yui = import ./home.nix;
+            home-manager.users.yui = import ./home;
             nixpkgs.overlays = [
               inputs.nix-alien.overlays.default
               (final: prev: {
