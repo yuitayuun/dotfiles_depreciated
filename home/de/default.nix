@@ -237,10 +237,21 @@
           "Mod+Down".action = focus-window-or-workspace-down;
           "Mod+Up".action = focus-window-or-workspace-up;
           "Mod+Right".action = focus-column-or-monitor-right;
+
           "Mod+Shift+Left".action =  move-column-left-or-to-monitor-left; 
           "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
           "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
           "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
+
+          "Mod+Ctrl+Left".action =  focus-monitor-left;
+          "Mod+Ctrl+Down".action = focus-monitor-down;
+          "Mod+Ctrl+Up".action = focus-monitor-up;
+          "Mod+Ctrl+Right".action = focus-monitor-right;
+          
+          "Mod+Shift+Ctrl+Left".action =  move-column-to-monitor-left; 
+          "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down; 
+          "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up; 
+          "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
 
 
           "Mod+Shift+E".action = quit;
