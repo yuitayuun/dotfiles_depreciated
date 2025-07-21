@@ -63,9 +63,9 @@
     
   # Imports
   imports = [
-    ./de
-    ./de/term.nix
-    ./git.nix
+    ../de
+    ../de/term.nix
+    ../git.nix
   ];
 
 
