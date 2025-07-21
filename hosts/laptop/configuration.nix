@@ -2,7 +2,7 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{ lib,  inputs, config, pkgs, ... }:
 
 {
   imports = [ 
@@ -186,6 +186,7 @@
   };
 };  
 
+  hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget
