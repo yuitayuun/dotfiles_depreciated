@@ -96,9 +96,9 @@
 
 
   # Zen Browser
-  programs.zen-browser = {
-    enable = true;
-  }; 
+  # programs.zen-browser = {
+  #   enable = true;
+  # }; 
   # Network Manager Applet
   # Xdg Desktop Portal
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
