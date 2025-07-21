@@ -39,7 +39,7 @@
             nixpkgs.overlays = [
               inputs.nix-alien.overlays.default
               (final: prev: {
-              # zen-browser = inputs.zen-browser.packages.${prev.system}.default;
+              zen-browser = inputs.zen-browser.packages.${prev.system}.default;
               })
             ];
           }
