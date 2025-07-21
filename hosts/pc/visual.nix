@@ -4,16 +4,16 @@
       "DP-1" = {
         scale = 1.5;
         position = {
-          x = 1800;
-          y = 300;
+          x = 0;
+          y = 60;
         };
       };
       "HDMI-A-1" = {
         scale = 1.25;
         transform.rotation = 90;
         position = {
-          x = 600;
-          y = 100;
+          x = 610;
+          y = 0;
         };   
       };   
     };
