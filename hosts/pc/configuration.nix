@@ -12,6 +12,10 @@
     ];
       # GTK Theme!
    
+  home-manager.users.yui.imports = [
+    ./visual.nix
+
+  ];
 
     #enable flakes and nix-command
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
@@ -180,10 +184,6 @@
     TimeoutStopSec = 10;
   };
 };  
-  home-manager.users.yui.imports = [
-    ./visual.nix
-
-  ];
   
 
   # List packages installed in system profile. To search, run:

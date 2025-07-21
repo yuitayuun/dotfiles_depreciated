@@ -11,6 +11,11 @@
       ../../keeb.nix
     ];
       # GTK Theme!
+
+  home-manager.users.yui.imports = [
+    ./visual.nix
+
+  ];
    
 
     #enable flakes and nix-command
