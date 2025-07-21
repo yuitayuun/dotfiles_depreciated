@@ -298,50 +298,6 @@
         settings = {
       "widgets" = [
         {
-          "edge" = "left";
-          "position" = "top";
-          "monitor" = "eDP-1";
-          "layer" = "overlay";
-          "margins" = {
-            "top" = "20%";
-          };
-          "thickness" = 40;
-          "length" = "25%";
-          "fg-color" = "#85C9E8cc";
-          "bg-color" = "#0000";
-          "border-color" = "#85C9E8ff";
-          "fg-text-color" = "#fffa";
-          "bg-text-color" = "#fffa";
-          "radius" = 10;
-          "obtuse-angle" = 90;
-          "type" = "slider";
-          "preset" = {
-            "type" = "backlight";
-          };
-        }
-        {
-          "edge" = "right";
-          "position" = "top";
-          "monitor" = "HDMI-A-1";
-          "layer" = "overlay";
-          "margins" = {
-            "top" = "20%";
-          };
-          "thickness" = 40;
-          "length" = "25%";
-          "fg-color" = "#85C9E8cc";
-          "bg-color" = "#0000";
-          "border-color" = "#85C9E8ff";
-          "fg-text-color" = "#fffa";
-          "bg-text-color" = "#fffa";
-          "radius" = 10;
-          "obtuse-angle" = 90;
-          "type" = "slider";
-          "preset" = {
-            "type" = "backlight";
-          };
-        }
-        {
           "pin-with-key" = false;
           "edge" = "top";
           "position" = "left";

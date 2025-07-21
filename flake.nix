@@ -149,7 +149,7 @@
                   };
                 };
 
-                home.file.".config/helix/themes/ayu_transparent.toml".source = ./de/ayu_transparent.toml;
+                home.file.".config/helix/themes/ayu_transparent.toml".source = ./home/de/ayu_transparent.toml;
                 
               };
             }     
