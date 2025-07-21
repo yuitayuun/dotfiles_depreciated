@@ -31,6 +31,71 @@
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./hosts/laptop/configuration.nix
+          inputs.home-manager.nixosModules.home-manager
+          {
+            home-manager.useGlobalPkgs = true;
+            home-manager.useUserPackages = true;
+            home-manager.users.yui = import ./home.nix;
+            nixpkgs.overlays = [
+              inputs.nix-alien.overlays.default
+              (final: prev: {
+              zen-browser = inputs.zen-browser.packages.${prev.system}.default;
+              })
+            ];
+          }
+          { home-manager.users.yui.imports = [
+              inputs.niri.homeModules.niri
+              catppuccin.homeModules.catppuccin
+              inputs.zen-browser.homeModules.default
+              inputs.way-edges.homeManagerModules.default
+          ];}
+               {
+              users.users.root = {
+                # normal root user config if any
+              };
+
+              
+
+
+              # Add root home-manager config here:
+              home-manager.users.root = {
+                home.stateVersion = "25.11";  # <<< Add this
+                programs.helix = {
+                  enable = true;
+                  settings = {
+                    theme = nixpkgs.lib.mkForce "ayu_transparent";
+                    editor.scroll-lines = 7;
+                    editor.soft-wrap.enable = true;
+                    editor.lsp.display-inlay-hints = true;
+                    editor.auto-format = true;
+                  };
+                  languages = {
+                    language-server = {
+                      nixd.command = "nixd";
+                      nil.command = "nil";
+                    };
+                    languages = [
+                      {
+                        name = "nix";
+                        language-servers = [ "nixd" "nil" ];
+                      }
+                    ];
+                  };
+                };
+
+                home.file.".config/helix/themes/ayu_transparent.toml".source = ./de/ayu_transparent.toml;
+                
+              };
+            }     
+        ];
+      };
+
+
+      pc = nixpkgs.lib.nixosSystem {
+        system = "x86_64-linux";
+        modules = [
+          # Import the previous configuration.nix we used,
+          # so the old configuration file still takes effect
           ./hosts/pc/configuration.nix
           inputs.home-manager.nixosModules.home-manager
           {
@@ -90,6 +155,11 @@
             }     
         ];
       };
+
+
+
+
+      
     };
   };
 }
