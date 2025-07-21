@@ -1,3 +1,5 @@
+{ config, lib, pkgs, system, inputs, ... }:
+{
     outputs = {
       "eDP-1" = {
         scale = 1.25;
@@ -15,3 +17,4 @@
       };   
     };
 
+}
