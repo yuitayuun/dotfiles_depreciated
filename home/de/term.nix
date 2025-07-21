@@ -137,11 +137,12 @@
     niriconf = "hx /home/yui/.config/niri/config.kdl";
     ctt = "exec /home/yuitayuun/Downloads/ClickTap.UX-linux-x64/ClickTap.UX.Desktop";
     ",s" = "nh os switch ~/dotfiles";
-    ",h" = "hx ~/dotfiles/home.nix";
-    ",c" = "hx ~/dotfiles/configuration.nix";
+    ",h" = "hx ~/dotfiles/home/default.nix";
+    ",lc" = "hx ~/dotfiles/hosts/laptop/configuration.nix";
+    ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
     ",f" = "hx ~/dotfiles/flake.nix";
-    ",d" = "hx ~/dotfiles/de/default.nix";
-    ",t" = "hx ~/dotfiles/de/term.nix";
+    ",d" = "hx ~/dotfiles/home/de/default.nix";
+    ",t" = "hx ~/dotfiles/home/de/term.nix";
     ",n" = "yazi ~/dotfiles";
     ",ss" = "sudo nixos-rebuild switch --flake ~/dotfiles";
     ",k" = "hx ~/dotfiles/keeb.nix";
