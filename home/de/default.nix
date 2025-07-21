@@ -85,7 +85,7 @@
         command = [
           "swaybg"
           "-i"
-          "/home/yui/dotfiles/de/newbackgroundblur.png"
+          "/home/yui/dotfiles/home/de/newbackgroundblur.png"
         ];
       }
       { command = [ "way-edges" ]; }
