@@ -180,7 +180,11 @@
     TimeoutStopSec = 10;
   };
 };  
+  home-manager.users.yui.imports = [
+    ./visual.nix
 
+  ];
+  
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

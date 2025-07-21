@@ -10,9 +10,7 @@
       };
       "HDMI-A-1" = {
         scale = 1.25;
-        transform = {
-          "90"
-        }
+        transform = "90";
         position = {
           x = 600;
           y = 100;
