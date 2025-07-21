@@ -186,6 +186,11 @@
 };  
   
 
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = true;  # see the note above
+
+
   # List packages installed in system profile. To search, run:
   # $ nix search wget
   #environment.systemPackages = with pkgs; [
