@@ -38,6 +38,14 @@
     heroic
     isoimagewriter
     vial
+    (zen-browser.override {
+      extraPrefsFiles = [
+        (builtins.fetchurl {  
+          url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
+          sha256 = "1mx679fbc4d9x4bnqajqx5a95y1lfasvf90pbqkh9sm3ch945p40";
+        })
+      ];
+    })
   ];
 
   home.pointerCursor = {
@@ -90,17 +98,7 @@
   # Zen Browser
   programs.zen-browser = {
     enable = true;
-    package = lib.mkForce (pkgs.zen-browser.override {
-    extraPrefsFiles = [
-      (builtins.fetchurl {  
-      url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
-      sha256 = "1mx679fbc4d9x4bnqajqx5a95y1lfasvf90pbqkh9sm3ch945p40";
-      })
-      (builtins.fetchurl {
-      url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/refs/heads/master/program/defaults/pref/config-prefs.js";
-      sha256 = "1kkyq5qdp7nnq09ckbd3xgdhsm2q80xjmihgiqbzb3yi778jxzbb";
-      })];
-    });}; 
+  }; 
   # Network Manager Applet
   # Xdg Desktop Portal
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
