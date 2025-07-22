@@ -63,4 +63,41 @@
       };
     }
   ]; 
+
+  # services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 240;
+        command = "${pkgs.systemd}/bin/loginctl lock-session";
+      }
+      {
+        timeout = 420;
+        command = "${pkgs.systemd}/bin/systemctl sleep";
+      }
+    ];
+    events = [
+      {
+        event = "lock";
+        command = "${pkgs.swaylock-effects}/bin/swaylock --screenshots --indicator --clock --effect-blur 10x3 --layout-bg-color FFFFFF --ring-color 4B0076 --key-hl-color 000000 --text-color FF13F0 --inside-ver-color FF13F0 --text-ver-color 000000 --ring-ver-color 000000 &";
+      }
+      {
+        event = "before-sleep";
+        command = "${pkgs.swaylock-effects}/bin/swaylock --screenshots --indicator --clock --effect-blur 10x3 --layout-bg-color FFFFFF --ring-color 4B0076 --key-hl-color 000000 --text-color FF13F0 --inside-ver-color FF13F0 --text-ver-color 000000 --ring-ver-color 000000 &";
+      }
+    ];
+  };
+    
+
+
+
+
+
+
+
+
+
+
+
+
 }
