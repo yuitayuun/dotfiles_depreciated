@@ -64,7 +64,7 @@
     }
   ]; 
 
-  # services.swayidle = {
+   services.swayidle = {
     enable = true;
     timeouts = [
       {
