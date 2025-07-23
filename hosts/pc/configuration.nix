@@ -41,7 +41,7 @@
   gparted
   via
   qmk-udev-rules
-  
+  # (callPackage /home/yui/dotfiles/hosts/pc/sddm-astronaut.nix {}).sddm-theme-dialog  
   # catppuccin-gtk
   # magnetic-catppuccin-gtk  
   #nautilus
@@ -110,6 +110,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
+  services.displayManager.sddm.enable = false;
   environment.gnome.excludePackages = [pkgs.gnome-console];
   services.desktopManager.gnome.enable = true;
   programs.nautilus-open-any-terminal = {

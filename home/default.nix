@@ -39,6 +39,8 @@
     isoimagewriter
     vial
     cider-2
+    
+
     (zen-browser.override {
       extraPrefsFiles = [
         (builtins.fetchurl {  
