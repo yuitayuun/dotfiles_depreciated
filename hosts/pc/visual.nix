@@ -2,6 +2,8 @@
 {
     programs.niri.settings.outputs = {
       "DP-1" = {
+        mode.width = 2560;
+        mode.height = 1440;
         scale = 1.5;
         position = {
           x = 0;
