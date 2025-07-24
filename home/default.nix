@@ -18,6 +18,7 @@
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
      # Tools
+    pcmanfm
     brightnessctl
     wine    
     gparted
