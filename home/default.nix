@@ -18,6 +18,7 @@
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
      # Tools
+    nemo
     pcmanfm
     brightnessctl
     wine    
