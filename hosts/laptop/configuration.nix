@@ -112,7 +112,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  environment.gnome.excludePackages = [pkgs.gnome-console];
+  environment.gnome.excludePackages = [pkgs.nautilus];
   services.desktopManager.gnome.enable = true;
   programs.nautilus-open-any-terminal = {
     enable = true;
