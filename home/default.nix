@@ -19,7 +19,6 @@
     jetbrains.pycharm-professional
      # Tools
     nemo
-    pcmanfm
     brightnessctl
     wine    
     gparted
