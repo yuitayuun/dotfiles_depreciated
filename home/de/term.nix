@@ -142,6 +142,8 @@
     ",lv" = "hx ~/dotfiles/hosts/laptop/visual.nix";
     ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
     ",pv" = "hx ~/dotfiles/hosts/pc/visual.nix";
+    ",c" = "hx ~/dotfiles/sharedconfig.nix";
+    
     ",f" = "hx ~/dotfiles/flake.nix";
     ",d" = "hx ~/dotfiles/home/de/default.nix";
     ",t" = "hx ~/dotfiles/home/de/term.nix";
