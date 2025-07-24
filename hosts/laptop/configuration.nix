@@ -9,6 +9,7 @@
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
       ../../keeb.nix
+      ../../sharedconfig.nix
     ];
       # GTK Theme!
 
