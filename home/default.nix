@@ -36,6 +36,7 @@
      # Compatibility        
     gamescope
     nix-alien
+    ppsspp
     heroic
     isoimagewriter
     vial
