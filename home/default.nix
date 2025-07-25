@@ -36,7 +36,8 @@
      # Compatibility        
     gamescope
     nix-alien
-    ppsspp
+    papirus-folders
+    ppsspp-sdl-wayland
     heroic
     isoimagewriter
     vial

@@ -31,7 +31,7 @@
         natural-scroll = true;
        scroll-method = "two-finger"; 
       };
-      focus-follows-mouse.enable = false;
+      focus-follows-mouse.enable = true;
       warp-mouse-to-focus.enable = true;
      #workspace-auto-back-and-forth = true;
 
@@ -704,5 +704,11 @@
       size = "standard";
       tweaks = [ "normal" ];
     };
+  };
+
+
+  gtk.iconTheme = {
+    package = pkgs.papirus-icon-theme.override {color = "magenta"; };
+    name = "Papirus";
   };
 }
