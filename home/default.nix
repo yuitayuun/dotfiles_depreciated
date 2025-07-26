@@ -18,9 +18,12 @@
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
      # Tools
+    papirus-folders
+    isoimagewriter
+    cider-2
+    flitter
     nemo
     brightnessctl
-    wine    
     gparted
     jq
     fastfetch
@@ -32,17 +35,15 @@
     gpu-screen-recorder-gtk    
     rustdesk-flutter
     pwvucontrol
-    xivlauncher
      # Compatibility        
-    gamescope
     nix-alien
-    papirus-folders
+     # Gaming
+    gamescope
+            
     ppsspp-sdl-wayland
+    xivlauncher
+    wine    
     heroic
-    isoimagewriter
-    vial
-    cider-2
-    
 
     (zen-browser.override {
       extraPrefsFiles = [
