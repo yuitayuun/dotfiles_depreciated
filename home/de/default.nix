@@ -33,7 +33,7 @@
       };
       focus-follows-mouse = {
         enable = true;
-        max-scroll-amount = "40%";
+        max-scroll-amount = "20%";
       };
       warp-mouse-to-focus.enable = true;
      #workspace-auto-back-and-forth = true;
