@@ -460,22 +460,22 @@
                 "type" = "cpu";
               };
             }
-            {
-             # // "radius" = 18;
-             # // "ring-width" = 8;
-              "font-size" = 20;
-              "font-family" = "JetBrainsMono Nerd Font";
-              "fg-color" = "#BEAFD9";
-              "bg-color" = "#00000044";
-              "type" = "ring";
-              "prefix" = "󰾶 ";
-              "suffix" = " {preset}";
-              "suffix-hide" = true;
-              "preset" = {
-                "update-interval" = 500;
-                "type" = "swap";
-              };
-            }
+            # {
+            #  # // "radius" = 18;
+            #  # // "ring-width" = 8;
+            #   "font-size" = 20;
+            #   "font-family" = "JetBrainsMono Nerd Font";
+            #   "fg-color" = "#BEAFD9";
+            #   "bg-color" = "#00000044";
+            #   "type" = "ring";
+            #   "prefix" = "󰾶 ";
+            #   "suffix" = " {preset}";
+            #   "suffix-hide" = true;
+            #   "preset" = {
+            #     "update-interval" = 500;
+            #     "type" = "swap";
+            #   };
+            # }
             {
              # // "radius" = 18;
              # // "ring-width" = 8;
