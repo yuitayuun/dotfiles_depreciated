@@ -17,6 +17,7 @@
     obsidian
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
+    anki-bin
      # Tools
     papirus-folders
     isoimagewriter
