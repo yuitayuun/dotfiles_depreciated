@@ -109,6 +109,7 @@
   # Network Manager Applet
   # Xdg Desktop Portal
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
+  
   # gpu-screen-recorder
  # programs.gpu-screen-recorder.enable = true;
   

@@ -112,7 +112,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  environment.gnome.excludePackages = [pkgs.nautilus pkgs.gnome-console];
+  environment.gnome.excludePackages = [ pkgs.nautilus pkgs.gnome-console ];
   services.desktopManager.gnome.enable = true;
   programs.nautilus-open-any-terminal = {
     enable = true;
@@ -173,7 +173,7 @@
   # Allow unfree packages
   nixpkgs.config.allowUnfree = true;
 
-
+  systemd.user.services."xdg-desktop-portal-gnome".path = [ pkgs.nautilus ];
   systemd.user.services.niri-polkit-gnome = {
     wantedBy = [ "niri.service" ];
     after = [ "graphical-session.target" ];
