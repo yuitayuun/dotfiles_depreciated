@@ -31,7 +31,10 @@
         natural-scroll = true;
        scroll-method = "two-finger"; 
       };
-      focus-follows-mouse.enable = true;
+      focus-follows-mouse = {
+        enable = true;
+        max-scroll-ammount = 70;
+      };
       warp-mouse-to-focus.enable = true;
      #workspace-auto-back-and-forth = true;
 
