@@ -42,6 +42,7 @@
   bat
   gparted
   via
+  vial
   qmk-udev-rules
   
   # catppuccin-gtk
