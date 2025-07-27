@@ -1,6 +1,6 @@
 { inputs, config, pkgs, ... }:
 {
-
+  hardware.keyboard.qmk.enable = true;
   # Via
   services.udev.packages = with pkgs; [
     via

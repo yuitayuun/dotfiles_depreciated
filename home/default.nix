@@ -39,8 +39,7 @@
      # Compatibility        
     nix-alien
      # Gaming
-    gamescope
-            
+    gamescope            
     ppsspp-sdl-wayland
     xivlauncher
     wine    
