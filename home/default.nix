@@ -2,7 +2,6 @@
 {
   home.username = "yui";
   home.homeDirectory = "/home/yui";
-
   systemd.user = {inherit (config.home) sessionVariables;};
   home.packages = with pkgs; [
     # Communicators
@@ -21,8 +20,8 @@
     anki-bin
      # Tools
     nix-search-tv
+    unrar
     isoimagewriter
-    qbittorrent-enhanced
     cider
     flitter
     nemo
