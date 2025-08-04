@@ -22,6 +22,7 @@
      # Tools
     nix-search-tv
     isoimagewriter
+    qbittorrent-enhanced
     cider
     flitter
     nemo
