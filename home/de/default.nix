@@ -696,9 +696,9 @@
 
 
 
-   catppuccin = {
-     enable = true;
-   };
+   # catppuccin = {
+   #   enable = true;
+   # };
   # GTK THEME!
   gtk = {
     enable = true;
@@ -712,7 +712,7 @@
     };
     iconTheme = {
       package = pkgs.papirus-icon-theme.override {color = "magenta"; };
-      name = lib.mkForce "Papirus";
+      name = lib.mkForce "Papirus-Dark";
     };
   };
 }
