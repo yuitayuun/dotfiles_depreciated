@@ -30,7 +30,6 @@
   nixfmt-rfc-style
   nh
   opentabletdriver 
-  xwayland-satellite
   swaylock-effects
   syncthing  
   mpv
