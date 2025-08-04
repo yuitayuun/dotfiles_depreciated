@@ -4,6 +4,7 @@
 
  # Niri System Thingies!
   programs.niri.enable = true;
+  programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
   programs.niri.settings = {
     prefer-no-csd = true;
     environment = {
@@ -112,7 +113,9 @@
       }
      
     ];        
-    
+    xwayland-satellite.path =
+      lib.getExe
+        inputs.niri.packages.${system}.xwayland-satellite-unstable;
     window-rules = [
       {
         matches = [ { app-id = ".*"; } ];
