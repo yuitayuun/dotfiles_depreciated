@@ -121,7 +121,7 @@
       }
       {
         matches = [ { is-floating = true; } ];
-        baba-is-float = true;
+        baba-is-float = false;
       }
     ];
     layer-rules = [
@@ -696,22 +696,23 @@
 
 
 
-  # GTK Theme!
-  gtk.enable = true;
-  catppuccin = {
+   catppuccin = {
+     enable = true;
+   };
+  # GTK THEME!
+  gtk = {
     enable = true;
-    gtk = {
-      enable = true;
-      flavor = "mocha";
-      accent = "lavender";
-      size = "standard";
-      tweaks = [ "normal" ];
+    theme = {
+      name = "Catppuccin-GTK-Purple-Dark";
+      package = pkgs.magnetic-catppuccin-gtk.override {
+        tweaks = [ "black"  ];
+        accent = [ "purple" ];
+        shade = "dark";
+        };
     };
-  };
-
-
-  gtk.iconTheme = {
-    package = pkgs.papirus-icon-theme.override {color = "magenta"; };
-    name = "Papirus";
+    iconTheme = {
+      package = pkgs.papirus-icon-theme.override {color = "magenta"; };
+      name = lib.mkForce "Papirus";
+    };
   };
 }
