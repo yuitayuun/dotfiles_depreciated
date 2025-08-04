@@ -8,7 +8,7 @@
     prefer-no-csd = true;
     environment = {
       CLUTTER_BACKEND = "wayland";
-      DISPLAY = ":0";
+      # DISPLAY = ":0";
       GDK_BACKEND = "wayland,x11";
       MOZ_ENABLE_WAYLAND = "1";
       NIXOS_OZONE_WL = "1";
