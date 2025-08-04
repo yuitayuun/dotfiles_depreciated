@@ -22,7 +22,7 @@
      # Tools
     nix-search-tv
     isoimagewriter
-    #cider-2
+    cider
     flitter
     nemo
     brightnessctl
