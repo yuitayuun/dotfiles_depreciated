@@ -1,4 +1,3 @@
-
 {
   description = "A simple NixOS flake";
 
@@ -26,15 +25,23 @@
     nixosConfigurations = {
     
       tayuun = nixpkgs.lib.nixosSystem {
+        specialArgs = {
+            inherit inputs;
+        };
         system = "x86_64-linux";
         modules = [
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./hosts/laptop/configuration.nix
           inputs.home-manager.nixosModules.home-manager
+          ({ config, ... }:
           {
             home-manager.useGlobalPkgs = true;
             home-manager.useUserPackages = true;
+            home-manager.extraSpecialArgs = {
+              inherit inputs; 
+              system = config.nixpkgs.hostPlatform.system;
+            };
             home-manager.users.yui = import ./home;
             nixpkgs.overlays = [
               inputs.nix-alien.overlays.default
@@ -42,7 +49,7 @@
               zen-browser = inputs.zen-browser.packages.${prev.system}.default;
               })
             ];
-          }
+          })
           { home-manager.users.yui.imports = [
               inputs.niri.homeModules.niri
               catppuccin.homeModules.catppuccin
