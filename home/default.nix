@@ -10,8 +10,9 @@
     equibop
     fractal
     chromium
-    # Wallpapers
+    # Looks
     swww
+    magnetic-catppuccin-gtk
     swaybg
     # Work
     obsidian
@@ -19,6 +20,7 @@
     jetbrains.pycharm-professional
     anki-bin
      # Tools
+    nix-search-tv
     papirus-folders
     isoimagewriter
     cider-2
@@ -44,7 +46,7 @@
     xivlauncher
     wine    
     heroic
-
+    
     (zen-browser.override {
       extraPrefsFiles = [
         (builtins.fetchurl {  
