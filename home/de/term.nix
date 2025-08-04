@@ -137,6 +137,7 @@
     niriconf = "hx /home/yui/.config/niri/config.kdl";
     ctt = "exec /home/yuitayuun/Downloads/ClickTap.UX-linux-x64/ClickTap.UX.Desktop";
     ",s" = "nh os switch ~/dotfiles";
+    ",u" = "nh os switch ~/dotfiles --update";
     ",h" = "hx ~/dotfiles/home/default.nix";
     ",lc" = "hx ~/dotfiles/hosts/laptop/configuration.nix";
     ",lv" = "hx ~/dotfiles/hosts/laptop/visual.nix";
