@@ -21,9 +21,8 @@
     anki-bin
      # Tools
     nix-search-tv
-    papirus-folders
     isoimagewriter
-    cider-2
+    #cider-2
     flitter
     nemo
     brightnessctl
