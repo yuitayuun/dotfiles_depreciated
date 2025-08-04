@@ -19,6 +19,7 @@
     jetbrains.pycharm-professional
     anki-bin
      # Tools
+    alacritty
     nix-search-tv
     unrar
     isoimagewriter
