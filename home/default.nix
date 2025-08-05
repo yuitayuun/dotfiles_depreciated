@@ -24,6 +24,7 @@
     unrar
     isoimagewriter
     cider
+    yt-dlp
     flitter
     nemo
     brightnessctl
@@ -40,11 +41,12 @@
     pwvucontrol
      # Compatibility        
     nix-alien
+    bottles
+    wine    
      # Gaming
     gamescope            
     ppsspp-sdl-wayland
     xivlauncher
-    wine    
     heroic
     
     (zen-browser.override {
@@ -56,6 +58,10 @@
       ];
     })
   ];
+
+
+  programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
+
 
   home.pointerCursor = {
     enable = true;
