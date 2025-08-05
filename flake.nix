@@ -33,6 +33,7 @@
           # Import the previous configuration.nix we used,
           # so the old configuration file still takes effect
           ./hosts/laptop/configuration.nix
+          catppuccin.nixosModules.catppuccin
           inputs.home-manager.nixosModules.home-manager
           ({ config, ... }:
           {
