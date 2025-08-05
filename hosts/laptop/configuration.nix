@@ -112,7 +112,7 @@
 
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = true;
-  environment.gnome.excludePackages = [ pkgs.nautilus pkgs.gnome-console ];
+  environment.gnome.excludePackages = [ pkgs.gnome-console ];
   services.desktopManager.gnome.enable = true;
   programs.nautilus-open-any-terminal = {
     enable = true;
@@ -120,6 +120,8 @@
   };
   # Set niri as a default session
   services.displayManager.defaultSession = "niri";
+  # Niri Latest Commit
+    programs.niri.package = inputs.niri.packages.${config.nixpkgs.hostPlatform.system}.niri-unstable;
 
 
   # Enable CUPS to print documents.
