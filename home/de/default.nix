@@ -96,7 +96,7 @@
       { command = [ "syncthing" "--no-browser" ]; }
       { command = [ "otd-daemon" ]; }
       { command = [ "sh" "-c" "equibop& fractal" ]; }
-      { command = [ "xwayland-satellite" ]; }
+      # { command = [ "xwayland-satellite" ]; }
       {
         command = [
           "wlsunset"
