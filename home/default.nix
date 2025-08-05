@@ -44,6 +44,7 @@
     bottles
     wine    
      # Gaming
+    lutris
     gamescope            
     ppsspp-sdl-wayland
     xivlauncher
