@@ -121,7 +121,7 @@
   # Set niri as a default session
   services.displayManager.defaultSession = "niri";
   # Niri Latest Commit
-    programs.niri.package = inputs.niri.packages.${config.nixpkgs.hostPlatform.system}.niri-unstable;
+  programs.niri.package = inputs.niri.packages.${config.nixpkgs.hostPlatform.system}.niri-unstable;
 
 
   # Enable CUPS to print documents.
