@@ -43,6 +43,8 @@
     nix-alien
     bottles
     wine    
+    qemu
+    quickemu
      # Gaming
     lutris
     gamescope            
