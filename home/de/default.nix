@@ -4,7 +4,6 @@
 
  # Niri System Thingies!
   programs.niri.enable = true;
-  programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
   programs.niri.settings = {
     prefer-no-csd = true;
     environment = {
