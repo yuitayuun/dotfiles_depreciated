@@ -698,9 +698,11 @@
 
 
 
-   # catppuccin = {
-   #   enable = true;
-   # };
+  catppuccin = {
+    enable = true;
+    accent = "lavender";
+    gtk.icon.enable = false;
+  };
   # GTK THEME!
   gtk = {
     enable = true;
