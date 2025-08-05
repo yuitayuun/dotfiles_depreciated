@@ -111,7 +111,23 @@
   
 
   # Enable the GNOME Desktop Environment.
-  services.displayManager.gdm.enable = true;
+  services.displayManager.gdm.enable = false;
+  services.displayManager.sddm = {
+    enable = true;
+    package = pkgs.kdePackages.sddm;
+  };
+  catppuccin = {
+    sddm = {
+      enable = true;
+    };
+    fcitx5 = {
+      enable = true;
+    };
+    tty = {
+      enable = true;
+    };
+  };
+
   environment.gnome.excludePackages = [ pkgs.gnome-console ];
   services.desktopManager.gnome.enable = true;
   programs.nautilus-open-any-terminal = {
