@@ -71,7 +71,7 @@
     enable = true;
     package = pkgs.runCommand "makise-kursor" {} ''
       mkdir -p $out/share/icons/makise-kursor
-      ${pkgs.unzip}/bin/unzip ${../makise-kursor.zip}
+      ${pkgs.unzip}/bin/unzip ${./de/makise-kursor.zip}
       cp -r cursors index.theme $out/share/icons/makise-kursor
     '';
     name = "Makise-Kurisu-Cursor";
