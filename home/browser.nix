@@ -17,6 +17,9 @@
       ];
       profiles = {
         default = {
+          extensions = {
+            force = true;
+          };
           name = "default";
           id = 0;
       settings = {
@@ -38,8 +41,8 @@
             "privacy.clearOnShutdown.cookies" = false;
             "privacy.clearOnShutdown.downloads" = false;
             "privacy.clearOnShutdown.history" = false;
-            "privacy.fingerprintingProtection" = true;
-            "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
+            "privacy.fingerprintingProtection" = false;
+            # "privacy.fingerprintingProtection.overrides" = "+AllTargets,-CSSPrefersColorScheme";
             "privacy.resistFingerprinting" = false;
             "webgl.disabled" = false;
 
@@ -89,13 +92,15 @@
           preConfig = builtins.readFile (inputs.betterfox + "/user.js");
           userChrome = ''
             @import url("${inputs.firefox-ui-fix + "/css/leptonChrome.css"}");
-            @import url("${pkgs.rice.compileSCSS "firefox.css" ./firefox.scss}");
           '';
           userContent = ''
             @import url("${inputs.firefox-ui-fix + "/css/leptonContent.css"}")
           '';
         };
-        secondary.id = 1;
+        secondary = {
+        id = 1;
+        extensions.force = true;
+        };
       };
     }; # }}}
 };
