@@ -8,7 +8,7 @@
   imports = [ 
       # Include the results of the hardware scan.
       ./hardware-configuration.nix
-      ../../keeb.nix
+      ./keyboard/keeb.nix
       ../../sharedconfig.nix
     ];
       # GTK Theme!
