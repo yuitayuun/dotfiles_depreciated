@@ -9,7 +9,6 @@
     equibop
     fractal
     chromium
-    librewolf-bin
     # Looks
     swww
     magnetic-catppuccin-gtk
@@ -87,6 +86,7 @@
     ./de/term.nix
     ../git.nix
     ../cachix.nix
+    ./browser.nix
   ];
 
 
