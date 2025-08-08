@@ -54,14 +54,14 @@
     xivlauncher
     heroic
     
-    (zen-browser.override {
-      extraPrefsFiles = [
-        (builtins.fetchurl {  
-          url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
-          sha256 = "1mx679fbc4d9x4bnqajqx5a95y1lfasvf90pbqkh9sm3ch945p40";
-        })
-      ];
-    })
+    # (zen-browser.override {
+    #   extraPrefsFiles = [
+    #     (builtins.fetchurl {  
+    #       url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
+    #       sha256 = "1mx679fbc4d9x4bnqajqx5a95y1lfasvf90pbqkh9sm3ch945p40";
+    #     })
+    #   ];
+    # })
   ];
 
 
@@ -86,6 +86,7 @@
     ./de
     ./de/term.nix
     ../git.nix
+    ../cachix.nix
   ];
 
 
@@ -116,9 +117,9 @@
 
 
   # Zen Browser
-  # programs.zen-browser = {
-  #   enable = true;
-  # }; 
+  programs.zen-browser = {
+    enable = true;
+  }; 
   # Network Manager Applet
   # Xdg Desktop Portal
   xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-gtk];
