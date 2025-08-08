@@ -139,6 +139,7 @@
     ",s" = "nh os switch ~/dotfiles";
     ",u" = "nh os switch ~/dotfiles --update";
     ",h" = "hx ~/dotfiles/home/default.nix";
+    ",b" = "hx ~/dotfiles/home/browser.nix";
     ",lc" = "hx ~/dotfiles/hosts/laptop/configuration.nix";
     ",lv" = "hx ~/dotfiles/hosts/laptop/visual.nix";
     ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
