@@ -83,8 +83,8 @@
   imports = [
     ./de
     ./de/term.nix
-    ../git.nix
-    ../cachix.nix
+    ./git.nix
+    ./cachix.nix
   ];
 
 
