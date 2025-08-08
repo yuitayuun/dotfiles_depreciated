@@ -43,6 +43,20 @@
           bizarre_retry = 5;
         };
       };
+      plugins = with pkgs.yaziPlugins; {
+        inherit mount;
+      };
+      keymap.mgr.prepend_keymap = [
+        {
+          on = "M";
+          run = "plugin mount";
+        }
+        {
+          on = "<C-n>";
+          run = "shell -- ripdrag -n \"$@\"";
+          desc = "Drag and drop";
+        }
+      ];
     };
 
       # Kitty!
