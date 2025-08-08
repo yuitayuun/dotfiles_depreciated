@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "betterfox": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1753201717,
+        "narHash": "sha256-gHFA/1PeQ0iNAcjATGwgJOqRlR9YmxD/RJKkYN36QYA=",
+        "owner": "yokoffing",
+        "repo": "Betterfox",
+        "rev": "9727810114a44ddc4df35b2ef8ee8783ec95cf35",
+        "type": "github"
+      },
+      "original": {
+        "owner": "yokoffing",
+        "repo": "Betterfox",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -15,6 +31,22 @@
       "original": {
         "owner": "catppuccin",
         "repo": "nix",
+        "type": "github"
+      }
+    },
+    "firefox-ui-fix": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1754438804,
+        "narHash": "sha256-0oB0vqNoTtmAgQwkrs//YUFRd9unnt1CSvvxp9WfXFI=",
+        "owner": "black7375",
+        "repo": "Firefox-UI-Fix",
+        "rev": "7e215312695a0983228e25c00d605ac76686f7d2",
+        "type": "github"
+      },
+      "original": {
+        "owner": "black7375",
+        "repo": "Firefox-UI-Fix",
         "type": "github"
       }
     },
@@ -285,7 +317,9 @@
     },
     "root": {
       "inputs": {
+        "betterfox": "betterfox",
         "catppuccin": "catppuccin",
+        "firefox-ui-fix": "firefox-ui-fix",
         "home-manager": "home-manager",
         "niri": "niri",
         "nix-alien": "nix-alien",
@@ -373,11 +407,11 @@
         "nixpkgs": "nixpkgs_6"
       },
       "locked": {
-        "lastModified": 1754497708,
-        "narHash": "sha256-ZJBT2qNZy8fOV9UUu0QZ74GMzXWpXHG0TVtWBT/oMbw=",
+        "lastModified": 1754624672,
+        "narHash": "sha256-ouUU+UZJpSQZ4jCvbF5JVq+4FLqy7O1W+ineXguTPMA=",
         "owner": "0xc000022070",
         "repo": "zen-browser-flake",
-        "rev": "d6aa1dd4e37331af1e56c7c0f2774904ee89acca",
+        "rev": "ab485da9e2a1ae4f8b55b59f88e3c13e74dcb464",
         "type": "github"
       },
       "original": {
