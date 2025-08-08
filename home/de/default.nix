@@ -234,7 +234,7 @@
 
           #Spawn Keybinds!
           "Mod+Space".action.spawn = [ "walker" ];
-          "Mod+Z".action.spawn = [ "zen-beta" ];
+          "Mod+Z".action.spawn = [ "librewolf" ];
           "Mod+X".action.spawn = [ "swaync-client" "-t" ];
           "Mod+T".action.spawn = [ "kitty" ];
             

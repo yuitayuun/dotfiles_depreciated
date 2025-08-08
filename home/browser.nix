@@ -64,6 +64,7 @@
             # https://github.com/black7375/Firefox-UI-Fix/wiki/Options
             "userChrome.autohide.bookmarkbar" = true;
             "userChrome.autohide.page_action" = true;
+            "userChrome.autohide.navbar" = false; #test
             "userChrome.centered.urlbar" = true;
             "userChrome.decoration.animate" = true;
             "userChrome.decoration.cursor" = true;

@@ -19,7 +19,6 @@
     jetbrains.pycharm-professional
     anki-bin
      # Tools
-    handbrake
     alacritty
     nix-search-tv
     unrar

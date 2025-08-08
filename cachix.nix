@@ -1,5 +1,6 @@
 {
   nix.settings = {
+    trusted-users = [ "root" "@wheel" "yui" "yuitayuun" ];
     substituters = [
       "https://niri.cachix.org"
       "https://bandithedoge.cachix.org"
