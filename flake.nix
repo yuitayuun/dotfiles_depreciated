@@ -4,19 +4,14 @@
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    zen-browser.url = "github:0xc000022070/zen-browser-flake";
+    zen-browser = {
+      url = "github:0xc000022070/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     niri.url = "github:sodiboo/niri-flake";
     way-edges.url = "github:way-edges/way-edges";
     catppuccin.url = "github:catppuccin/nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
-    betterfox = {
-      url = "github:yokoffing/Betterfox";
-      flake = false;
-    };
-    firefox-ui-fix = {
-      url = "github:black7375/Firefox-UI-Fix";
-      flake = false;
-    };
     # home-manager for user configs
     home-manager = {
       url = "github:nix-community/home-manager/";

@@ -85,7 +85,6 @@
     ./de/term.nix
     ../git.nix
     ../cachix.nix
-    ./browser.nix
   ];
 
 
