@@ -29,11 +29,8 @@
 
   outputs =
     {
-      self,
       nixpkgs,
       catppuccin,
-      home-manager,
-      zen-browser,
       ...
     }@inputs:
     {
