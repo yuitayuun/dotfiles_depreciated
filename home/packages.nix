@@ -60,4 +60,6 @@
     #   ];
     # })
   ];
+    programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
+
 }

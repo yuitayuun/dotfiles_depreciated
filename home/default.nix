@@ -5,7 +5,6 @@
   systemd.user = {inherit (config.home) sessionVariables;};
 
 
-  programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
 
 
   home.pointerCursor = {
@@ -30,7 +29,8 @@
     ./cachix.nix
   ];
 
-
+  # Niri
+  programs.niri.package = inputs.niri.packages.${system}.niri-unstable;
   # Zen Browser
   programs.zen-browser = {
     enable = true;

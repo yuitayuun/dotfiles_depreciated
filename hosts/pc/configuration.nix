@@ -13,7 +13,7 @@
       # GTK Theme!
    
   home-manager.users.yui.imports = [
-    ./visual.nix
+    ./home
 
   ];
 
