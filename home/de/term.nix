@@ -5,6 +5,7 @@
     # Yazi!
     programs.yazi = {
       enable = true;
+      initLua = ./yazi/init.lua;
       settings = {
         mgr = {
           ratio = [
@@ -45,6 +46,7 @@
       };
       plugins = with pkgs.yaziPlugins; {
         inherit mount;
+        bunny = "${inputs.bunny-yazi}";
       };
       keymap.mgr.prepend_keymap = [
         {
@@ -56,8 +58,16 @@
           run = "shell -- ripdrag -n \"$@\"";
           desc = "Drag and drop";
         }
+        {
+          on = ";";
+          run = "plugin bunny";
+          desc = "Start bunny.yazi";
+        }
       ];
     };
+
+  # home.file.".config/yazi/init.lua.source" = ./yaziinit.lua;
+
 
       # Kitty!
   programs.kitty = {
