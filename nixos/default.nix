@@ -1,47 +1,50 @@
-
-{ lib,  inputs, config, pkgs, ... }:
+{
+  lib,
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-   
 
-    #enable flakes and nix-command
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
-  environment.systemPackages = with pkgs; [
-  walker
-  pokemon-colorscripts-mac
-  zoxide
-  nwg-look
-  nixd
-  nixfmt-rfc-style
-  nh
-  opentabletdriver 
-  swaylock-effects
-  syncthing  
-  mpv
-  overskride
-  blueman
-  kanata
-  evtest
-  usbutils
-  bat
-  gparted
-  via
-  vial
-  qmk-udev-rules
-  
-  # catppuccin-gtk
-  # magnetic-catppuccin-gtk  
-  #nautilus
-  #gnome-disk-utility
-  # more packages go here
+  #enable flakes and nix-command
+  nix.settings.experimental-features = [
+    "nix-command"
+    "flakes"
   ];
+  environment.systemPackages = with pkgs; [
+    walker
+    pokemon-colorscripts-mac
+    zoxide
+    nwg-look
+    nixd
+    nixfmt-rfc-style
+    nh
+    opentabletdriver
+    swaylock-effects
+    syncthing
+    mpv
+    overskride
+    blueman
+    kanata
+    evtest
+    usbutils
+    bat
+    gparted
+    via
+    vial
+    qmk-udev-rules
 
-
+    # catppuccin-gtk
+    # magnetic-catppuccin-gtk
+    #nautilus
+    #gnome-disk-utility
+    # more packages go here
+  ];
 
   # Network Manager Applet
   programs.nm-applet.enable = true;
-
-
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
@@ -57,10 +60,9 @@
     xwayland-satellite
   ];
 
-  
   #set default editor as helix
   environment.variables.EDITOR = "hx";
-  
+
   # Bootloader.
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
@@ -93,8 +95,6 @@
     LC_TIME = "pl_PL.UTF-8";
   };
 
-  
-
   # Enable the GNOME Desktop Environment.
   services.displayManager.gdm.enable = false;
   services.displayManager.sddm = {
@@ -124,7 +124,6 @@
   # Niri Latest Commit
   programs.niri.package = inputs.niri.packages.${config.nixpkgs.hostPlatform.system}.niri-unstable;
 
-
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
@@ -147,7 +146,6 @@
   # Enable touchpad support (enabled default in most desktopManager).
   # services.xserver.libinput.enable = true;
 
-
   # Shell options!
   users.users.yui.shell = pkgs.fish;
 
@@ -155,9 +153,12 @@
   users.users.yui = {
     isNormalUser = true;
     description = "yui";
-    extraGroups = [ "networkmanager" "wheel" ];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+    ];
     packages = with pkgs; [
-    #  thunderbird
+      #  thunderbird
     ];
   };
 
@@ -182,16 +183,15 @@
     after = [ "graphical-session.target" ];
     partOf = [ "graphical-session.target" ];
     serviceConfig = {
-    Type = "simple";
-    ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
-    Restart = "on-failure";
-    RestartSec = 1;
-    TimeoutStopSec = 10;
+      Type = "simple";
+      ExecStart = "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1";
+      Restart = "on-failure";
+      RestartSec = 1;
+      TimeoutStopSec = 10;
+    };
   };
-};  
 
+  #overwriting files so nh doesnt tweak out
+  home-manager.backupFileExtension = "backup";
 
-#overwriting files so nh doesnt tweak out
-home-manager.backupFileExtension = "backup";
-  
 }

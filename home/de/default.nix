@@ -1,8 +1,15 @@
-{ config, lib, pkgs, system, inputs, ... }:
 {
-#  imports = [ inputs.catppuccin.homeModules.catppuccin ];
+  config,
+  lib,
+  pkgs,
+  system,
+  inputs,
+  ...
+}:
+{
+  #  imports = [ inputs.catppuccin.homeModules.catppuccin ];
 
- # Niri System Thingies!
+  # Niri System Thingies!
   programs.niri.enable = true;
   programs.niri.settings = {
     prefer-no-csd = true;
@@ -15,7 +22,7 @@
       QT_QPA_PLATFORM = "wayland;xcb";
       QT_WAYLAND_DISABLE_WINDOWDECORATION = "1";
       SDL_VIDEODRIVER = "wayland";
-     # _JAVA_AWT_WM_NONREPARENTING = "1";
+      # _JAVA_AWT_WM_NONREPARENTING = "1";
       TERM = "kitty";
       TERMINAL = "kitty";
       XMODIFIERS = "@im=fcitx";
@@ -26,20 +33,20 @@
         numlock = true;
         repeat-rate = 50;
         repeat-delay = 250;
-      };      
+      };
       touchpad = {
         natural-scroll = true;
-       scroll-method = "two-finger"; 
+        scroll-method = "two-finger";
       };
       focus-follows-mouse = {
         enable = true;
         max-scroll-amount = "10%";
       };
       warp-mouse-to-focus.enable = true;
-     #workspace-auto-back-and-forth = true;
+      #workspace-auto-back-and-forth = true;
 
     };
-     screenshot-path = "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png";
+    screenshot-path = "~/Pictures/Screenshots/Screenshot-from-%Y-%m-%d-%H-%M-%S.png";
 
     # outputs = {
     #   "eDP-1" = {
@@ -54,14 +61,17 @@
     #     position = {
     #       x = 0;
     #       y = 0;
-    #     };   
-    #   };   
+    #     };
+    #   };
     # };
     layout = {
       focus-ring = {
         width = 2;
-        active.gradient = {from="green"; to="purple"; };
-        inactive.color = "505050";   
+        active.gradient = {
+          from = "green";
+          to = "purple";
+        };
+        inactive.color = "505050";
       };
       default-column-width = { };
       gaps = 8;
@@ -72,17 +82,17 @@
         { proportion = 1.0; }
       ];
       tab-indicator = {
-      position = "top";
-      place-within-column = true;
+        position = "top";
+        place-within-column = true;
       };
       shadow = {
-          enable = true;
-         #offset = {
+        enable = true;
+        #offset = {
         #   x = 0;
         #   y = 0;
         # };
-        };
       };
+    };
     spawn-at-startup = [
       {
         command = [
@@ -93,9 +103,20 @@
       }
       { command = [ "way-edges" ]; }
       { command = [ "swww-daemon" ]; }
-      { command = [ "syncthing" "--no-browser" ]; }
+      {
+        command = [
+          "syncthing"
+          "--no-browser"
+        ];
+      }
       { command = [ "otd-daemon" ]; }
-      { command = [ "sh" "-c" "equibop& fractal" ]; }
+      {
+        command = [
+          "sh"
+          "-c"
+          "equibop& fractal"
+        ];
+      }
       # { command = [ "xwayland-satellite" ]; }
       {
         command = [
@@ -110,11 +131,9 @@
           "1800"
         ];
       }
-     
-    ];        
-    xwayland-satellite.path =
-      lib.getExe
-        inputs.niri.packages.${system}.xwayland-satellite-unstable;
+
+    ];
+    xwayland-satellite.path = lib.getExe inputs.niri.packages.${system}.xwayland-satellite-unstable;
     window-rules = [
       {
         matches = [ { app-id = ".*"; } ];
@@ -131,7 +150,7 @@
         matches = [ { namespace = "^wallpaper$"; } ];
         place-within-backdrop = true;
       }
-      
+
     ];
     cursor = {
       theme = "makise-kursor";
@@ -140,12 +159,12 @@
     };
 
     binds =
-        with config.lib.niri.actions;
-        let
-          move-column-to-workspace = n: { move-column-to-workspace = n; };
-        in
-        {
-          "Mod+Shift+Slash".action = show-hotkey-overlay;
+      with config.lib.niri.actions;
+      let
+        move-column-to-workspace = n: { move-column-to-workspace = n; };
+      in
+      {
+        "Mod+Shift+Slash".action = show-hotkey-overlay;
         #  "Mod+Return".action.spawn = pkgs.rice.terminal;
         #  "Mod+Space".action.spawn = pkgs.lib.splitString " " pkgs.rice.menu;
         #  "Mod+Backspace".action.spawn = "wlr-which-key";
@@ -156,162 +175,159 @@
         #    ""
         #  ];
 
-          Print.action = screenshot;
-          "Mod+Shift+S".action = screenshot;
+        Print.action = screenshot;
+        "Mod+Shift+S".action = screenshot;
         # "Shift+Print".action.spawn = builtins.toString (
         #    pkgs.writeShellScript "save-replay" "killall -SIGUSR1 gpu-screen-recorder && notify-send -u low 'GPU Screen Recorder' 'Replay saved' -i com.dec05eba.gpu_screen_recorder -a 'GPU Screen Recorder'"
         #  );
 
-          XF86AudioMute = {
-            action.spawn = [
-              "wpctl"
-              "set-mute"
-              "@DEFAULT_AUDIO_SINK@"
-              "toggle"
-            ];
-            allow-when-locked = true;
-          };
-          XF86AudioRaiseVolume = {
-            action.spawn = [
-              "wpctl"
-              "set-volume"
-              "-l"
-              "1.5"
-              "@DEFAULT_AUDIO_SINK@"
-              "5%+"
-            ];
-            allow-when-locked = true;
-          };
-          XF86AudioLowerVolume = {
-            action.spawn = [
-              "wpctl"
-              "set-volume"
-              "@DEFAULT_AUDIO_SINK@"
-              "5%-"
-            ];
-            allow-when-locked = true;
-          };
-          XF86AudioPlay = {
-            action.spawn = [
-              "mpc"
-              "toggle"
-            ];
-            allow-when-locked = true;
-          };
-          XF86AudioPrev = {
-            action.spawn = [
-              "mpc"
-              "prev"
-            ];
-            allow-when-locked = true;
-          };
-          XF86AudioNext = {
-            action.spawn = [
-              "mpc"
-              "next"
-            ];
-            allow-when-locked = true;
-          };
-          XF86MonBrightnessUp = {
-            action.spawn = [
-              "brightnessctl"
-              "--class=backlight"
-              "set"
-              "+10%"
-            ];
-          };
-          XF86MonBrightnessDown = {
-            action.spawn = [
-              "brightnessctl"  
-              "--class=backlight"
-              "set"
-              "10%-"
-            ];
-          };
+        XF86AudioMute = {
+          action.spawn = [
+            "wpctl"
+            "set-mute"
+            "@DEFAULT_AUDIO_SINK@"
+            "toggle"
+          ];
+          allow-when-locked = true;
+        };
+        XF86AudioRaiseVolume = {
+          action.spawn = [
+            "wpctl"
+            "set-volume"
+            "-l"
+            "1.5"
+            "@DEFAULT_AUDIO_SINK@"
+            "5%+"
+          ];
+          allow-when-locked = true;
+        };
+        XF86AudioLowerVolume = {
+          action.spawn = [
+            "wpctl"
+            "set-volume"
+            "@DEFAULT_AUDIO_SINK@"
+            "5%-"
+          ];
+          allow-when-locked = true;
+        };
+        XF86AudioPlay = {
+          action.spawn = [
+            "mpc"
+            "toggle"
+          ];
+          allow-when-locked = true;
+        };
+        XF86AudioPrev = {
+          action.spawn = [
+            "mpc"
+            "prev"
+          ];
+          allow-when-locked = true;
+        };
+        XF86AudioNext = {
+          action.spawn = [
+            "mpc"
+            "next"
+          ];
+          allow-when-locked = true;
+        };
+        XF86MonBrightnessUp = {
+          action.spawn = [
+            "brightnessctl"
+            "--class=backlight"
+            "set"
+            "+10%"
+          ];
+        };
+        XF86MonBrightnessDown = {
+          action.spawn = [
+            "brightnessctl"
+            "--class=backlight"
+            "set"
+            "10%-"
+          ];
+        };
 
+        #Spawn Keybinds!
+        "Mod+Space".action.spawn = [ "walker" ];
+        "Mod+Z".action.spawn = [ "zen-beta" ];
+        "Mod+X".action.spawn = [
+          "swaync-client"
+          "-t"
+        ];
+        "Mod+T".action.spawn = [ "kitty" ];
 
+        "Mod+Left".action = focus-column-or-monitor-left;
+        "Mod+Down".action = focus-window-or-workspace-down;
+        "Mod+Up".action = focus-window-or-workspace-up;
+        "Mod+Right".action = focus-column-or-monitor-right;
 
+        "Mod+Shift+Left".action = move-column-left-or-to-monitor-left;
+        "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
+        "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
+        "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
 
-          #Spawn Keybinds!
-          "Mod+Space".action.spawn = [ "walker" ];
-          "Mod+Z".action.spawn = [ "zen-beta" ];
-          "Mod+X".action.spawn = [ "swaync-client" "-t" ];
-          "Mod+T".action.spawn = [ "kitty" ];
-            
-          "Mod+Left".action = focus-column-or-monitor-left;
-          "Mod+Down".action = focus-window-or-workspace-down;
-          "Mod+Up".action = focus-window-or-workspace-up;
-          "Mod+Right".action = focus-column-or-monitor-right;
+        "Mod+Ctrl+Left".action = focus-monitor-left;
+        "Mod+Ctrl+Down".action = focus-monitor-down;
+        "Mod+Ctrl+Up".action = focus-monitor-up;
+        "Mod+Ctrl+Right".action = focus-monitor-right;
 
-          "Mod+Shift+Left".action =  move-column-left-or-to-monitor-left; 
-          "Mod+Shift+Down".action = move-window-down-or-to-workspace-down;
-          "Mod+Shift+Up".action = move-window-up-or-to-workspace-up;
-          "Mod+Shift+Right".action = move-column-right-or-to-monitor-right;
+        "Mod+Shift+Ctrl+Left".action = move-column-to-monitor-left;
+        "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down;
+        "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up;
+        "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
 
-          "Mod+Ctrl+Left".action =  focus-monitor-left;
-          "Mod+Ctrl+Down".action = focus-monitor-down;
-          "Mod+Ctrl+Up".action = focus-monitor-up;
-          "Mod+Ctrl+Right".action = focus-monitor-right;
-          
-          "Mod+Shift+Ctrl+Left".action =  move-column-to-monitor-left; 
-          "Mod+Shift+Ctrl+Down".action = move-column-to-monitor-down; 
-          "Mod+Shift+Ctrl+Up".action = move-column-to-monitor-up; 
-          "Mod+Shift+Ctrl+Right".action = move-column-to-monitor-right;
+        "Mod+Shift+E".action = quit;
+        "Mod+Q".action = close-window;
+        "Mod+V".action = toggle-window-floating;
+        "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
+        "Mod+f".action = maximize-column;
+        "Mod+Shift+f".action = fullscreen-window;
+        "Mod+Ctrl+f".action = toggle-windowed-fullscreen;
+        "Mod+r".action = switch-preset-column-width;
+        "Mod+Shift+r".action = expand-column-to-available-width;
+        "Mod+Equal".action = set-window-width "+10";
+        "Mod+Minus".action = set-window-width "-10";
+        "Mod+Shift+Equal".action = set-window-height "+10";
+        "Mod+Shift+Minus".action = set-window-height "-10";
 
-
-          "Mod+Shift+E".action = quit;
-          "Mod+Q".action = close-window;
-          "Mod+V".action = toggle-window-floating;
-          "Mod+Shift+V".action = switch-focus-between-floating-and-tiling;
-          "Mod+f".action = maximize-column;
-          "Mod+Shift+f".action = fullscreen-window;
-          "Mod+Ctrl+f".action = toggle-windowed-fullscreen;
-          "Mod+r".action = switch-preset-column-width;
-          "Mod+Shift+r".action = expand-column-to-available-width;
-          "Mod+Equal".action = set-window-width "+10";
-          "Mod+Minus".action = set-window-width "-10";
-          "Mod+Shift+Equal".action = set-window-height "+10";
-          "Mod+Shift+Minus".action = set-window-height "-10";
-          
-          "Mod+Alt+Right".action = consume-or-expel-window-right;
-          "Mod+Alt+Left".action = consume-or-expel-window-left;
-          "Mod+Comma".action = consume-window-into-column;
-          "Mod+Period".action = expel-window-from-column;
-       #   "Mod+g".action = toggle-column-tabbed-display;
-          "Mod+Tab".action = toggle-overview;
+        "Mod+Alt+Right".action = consume-or-expel-window-right;
+        "Mod+Alt+Left".action = consume-or-expel-window-left;
+        "Mod+Comma".action = consume-window-into-column;
+        "Mod+Period".action = expel-window-from-column;
+        #   "Mod+g".action = toggle-column-tabbed-display;
+        "Mod+Tab".action = toggle-overview;
         #  "Mod+-".action = [ "set-window-width" "+10%" ];
         #  "Mod++".action = [ "set-window-width" "-10%" ];
-          "Mod+WheelScrollDown".action = focus-workspace-down;
-          "Mod+WheelScrollUp".action = focus-workspace-up;
+        "Mod+WheelScrollDown".action = focus-workspace-down;
+        "Mod+WheelScrollUp".action = focus-workspace-up;
 
-          "Mod+1".action = focus-workspace 1;
-          "Mod+2".action = focus-workspace 2;
-          "Mod+3".action = focus-workspace 3;
-          "Mod+4".action = focus-workspace 4;
-          "Mod+5".action = focus-workspace 5;
-          "Mod+6".action = focus-workspace 6;
-          "Mod+7".action = focus-workspace 7;
-          "Mod+8".action = focus-workspace 8;
-          "Mod+9".action = focus-workspace 9;
-          "Mod+Shift+1".action = move-column-to-workspace 1;
-          "Mod+Shift+2".action = move-column-to-workspace 2;
-          "Mod+Shift+3".action = move-column-to-workspace 3;
-          "Mod+Shift+4".action = move-column-to-workspace 4;
-          "Mod+Shift+5".action = move-column-to-workspace 5;
-          "Mod+Shift+6".action = move-column-to-workspace 6;
-          "Mod+Shift+7".action = move-column-to-workspace 7;
-          "Mod+Shift+8".action = move-column-to-workspace 8;
-          "Mod+Shift+9".action = move-column-to-workspace 9;
-        };
-      
- };
-  
+        "Mod+1".action = focus-workspace 1;
+        "Mod+2".action = focus-workspace 2;
+        "Mod+3".action = focus-workspace 3;
+        "Mod+4".action = focus-workspace 4;
+        "Mod+5".action = focus-workspace 5;
+        "Mod+6".action = focus-workspace 6;
+        "Mod+7".action = focus-workspace 7;
+        "Mod+8".action = focus-workspace 8;
+        "Mod+9".action = focus-workspace 9;
+        "Mod+Shift+1".action = move-column-to-workspace 1;
+        "Mod+Shift+2".action = move-column-to-workspace 2;
+        "Mod+Shift+3".action = move-column-to-workspace 3;
+        "Mod+Shift+4".action = move-column-to-workspace 4;
+        "Mod+Shift+5".action = move-column-to-workspace 5;
+        "Mod+Shift+6".action = move-column-to-workspace 6;
+        "Mod+Shift+7".action = move-column-to-workspace 7;
+        "Mod+Shift+8".action = move-column-to-workspace 8;
+        "Mod+Shift+9".action = move-column-to-workspace 9;
+      };
 
+  };
 
   # Way-Edges!
   programs.way-edges = {
-        enable = true;
-        settings = {
+    enable = true;
+    settings = {
       "widgets" = [
         {
           "pin-with-key" = false;
@@ -376,11 +392,14 @@
           "length" = "50%";
           "hover-color" = "#4E884Faa";
           "active-increase" = 0.2;
-         # /// "active-color" = "#fff";
+          # /// "active-color" = "#fff";
           "focus-color" = "#4E884F";
           "default-color" = "#000";
           "focused-only" = true;
-          "preset" = { "type" = "niri"; "filter-empty" = false; };
+          "preset" = {
+            "type" = "niri";
+            "filter-empty" = false;
+          };
         }
         {
           "edge" = "right";
@@ -392,13 +411,16 @@
           "length" = "50%";
           "hover-color" = "#4E884Faa";
           "active-increase" = 0.2;
-         # /// "active-color" = "#fff";
+          # /// "active-color" = "#fff";
           "focus-color" = "#4E884F";
           "default-color" = "#000";
           "focused-only" = true;
-          "preset" = { "type" = "niri"; "filter-empty" = false; };
+          "preset" = {
+            "type" = "niri";
+            "filter-empty" = false;
+          };
         }
-       # // =========== ring stats ===========
+        # // =========== ring stats ===========
         {
           "namespace" = "stats";
           "edge" = "left";
@@ -415,8 +437,8 @@
           };
           "items" = [
             {
-             # // "radius" = 18;
-             # // "ring-width" = 8;
+              # // "radius" = 18;
+              # // "ring-width" = 8;
               "font-size" = 20;
               "font-family" = "JetBrainsMono Nerd Font";
               "fg-color" = "#82B2E3";
@@ -431,8 +453,8 @@
               };
             }
             {
-             # // "radius" = 18;
-             # // "ring-width" = 8;
+              # // "radius" = 18;
+              # // "ring-width" = 8;
               "font-size" = 20;
               "font-family" = "JetBrainsMono Nerd Font";
               "fg-color" = "#FFB77B";
@@ -447,8 +469,8 @@
               };
             }
             {
-             # // "radius" = 18;
-             # // "ring-width" = 8;
+              # // "radius" = 18;
+              # // "ring-width" = 8;
               "font-size" = 20;
               "font-family" = "JetBrainsMono Nerd Font";
               "fg-color" = "#FB8893";
@@ -479,8 +501,8 @@
             #   };
             # }
             {
-             # // "radius" = 18;
-             # // "ring-width" = 8;
+              # // "radius" = 18;
+              # // "ring-width" = 8;
               "font-size" = 20;
               "font-family" = "JetBrainsMono Nerd Font";
               "bg-color" = "#00000044";
@@ -495,7 +517,7 @@
             }
           ];
         }
-       # // =========== time ===========
+        # // =========== time ===========
         {
           "namespace" = "time";
           "edge" = "top";
@@ -527,7 +549,7 @@
             }
           ];
         }
-       # // =========== battery indicator ===========
+        # // =========== battery indicator ===========
         {
           "edge" = "right";
           "position" = "bottom";
@@ -544,7 +566,7 @@
           "fg-color" = "#FF8700cc";
           "bg-color" = "#0000";
           "border-color" = "#FF8700";
-          "fg-text-color" = "#0000";# // hide text
+          "fg-text-color" = "#0000"; # // hide text
           "bg-text-color" = "#0000";
           "redraw-only-on-internal-update" = true;
           "preset" = {
@@ -569,7 +591,7 @@
           "fg-color" = "#FF8700cc";
           "bg-color" = "#0000";
           "border-color" = "#FF8700";
-          "fg-text-color" = "#0000";# // hide text
+          "fg-text-color" = "#0000"; # // hide text
           "bg-text-color" = "#0000";
           "redraw-only-on-internal-update" = true;
           "preset" = {
@@ -578,7 +600,7 @@
             "update-command" = "/home/yui/.config/way-edges/battery.sh";
           };
         }
-       # // =========== audio ===========
+        # // =========== audio ===========
         {
           "edge" = "top";
           "monitor" = "*";
@@ -626,7 +648,7 @@
             "type" = "microphone";
           };
         }
-       # // =========== tray ===========
+        # // =========== tray ===========
         {
           "namespace" = "tray";
           "edge" = "bottom";
@@ -691,12 +713,9 @@
         }
       ];
     };
-   };  
+  };
 
-  
   home.file.".config/way-edges/battery.sh".source = ./battery.sh;
-
-
 
   catppuccin = {
     enable = true;
@@ -709,13 +728,13 @@
     theme = {
       name = "Catppuccin-GTK-Purple-Dark";
       package = pkgs.magnetic-catppuccin-gtk.override {
-        tweaks = [ "black"  ];
+        tweaks = [ "black" ];
         accent = [ "purple" ];
         shade = "dark";
-        };
+      };
     };
     iconTheme = {
-      package = pkgs.papirus-icon-theme.override {color = "magenta"; };
+      package = pkgs.papirus-icon-theme.override { color = "magenta"; };
       name = lib.mkForce "Papirus-Dark";
     };
   };

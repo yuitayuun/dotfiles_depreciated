@@ -1,83 +1,87 @@
-{ inputs, config, lib, pkgs, ... }:
+{
+  inputs,
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 {
 
-    
-    # Yazi!
-    programs.yazi = {
-      enable = true;
-      initLua = ./yazi/init.lua;
-      settings = {
-        mgr = {
-          ratio = [
-            1
-            4
-            3
-          ];
-          sort_by = "natural";
-          sort_sensitive = true;
-          sort_reverse = false;
-          sort_dir_first = true;
-          linemode = "none";
-          show_hidden = true;
-          show_symlink = true;
-        };
-    
-        preview = {
-          image_filter = "lanczos3";
-          image_quality = 90;
-          tab_size = 1;
-          max_width = 600;
-          max_height = 900;
-          cache_dir = "";
-          ueberzug_scale = 1;
-          ueberzug_offset = [
-            0
-            0
-            0
-            0
-          ];
-        };
-    
-        tasks = {
-          micro_workers = 5;
-          macro_workers = 10;
-          bizarre_retry = 5;
-        };
+  # Yazi!
+  programs.yazi = {
+    enable = true;
+    initLua = ./yazi/init.lua;
+    settings = {
+      mgr = {
+        ratio = [
+          1
+          4
+          3
+        ];
+        sort_by = "natural";
+        sort_sensitive = true;
+        sort_reverse = false;
+        sort_dir_first = true;
+        linemode = "none";
+        show_hidden = true;
+        show_symlink = true;
       };
-      plugins = with pkgs.yaziPlugins; {
-        inherit mount;
-        bunny = "${inputs.bunny-yazi}";
+
+      preview = {
+        image_filter = "lanczos3";
+        image_quality = 90;
+        tab_size = 1;
+        max_width = 600;
+        max_height = 900;
+        cache_dir = "";
+        ueberzug_scale = 1;
+        ueberzug_offset = [
+          0
+          0
+          0
+          0
+        ];
       };
-      keymap.mgr.prepend_keymap = [
-        {
-          on = "M";
-          run = "plugin mount";
-        }
-        {
-          on = "<C-n>";
-          run = "shell -- ripdrag -n \"$@\"";
-          desc = "Drag and drop";
-        }
-        {
-          on = ";";
-          run = "plugin bunny";
-          desc = "Start bunny.yazi";
-        }
-      ];
+
+      tasks = {
+        micro_workers = 5;
+        macro_workers = 10;
+        bizarre_retry = 5;
+      };
     };
+    plugins = with pkgs.yaziPlugins; {
+      inherit mount;
+      bunny = "${inputs.bunny-yazi}";
+    };
+    keymap.mgr.prepend_keymap = [
+      {
+        on = "M";
+        run = "plugin mount";
+      }
+      {
+        on = "<C-n>";
+        run = "shell -- ripdrag -n \"$@\"";
+        desc = "Drag and drop";
+      }
+      {
+        on = ";";
+        run = "plugin bunny";
+        desc = "Start bunny.yazi";
+      }
+    ];
+  };
 
   # home.file.".config/yazi/init.lua.source" = ./yaziinit.lua;
 
-
-      # Kitty!
+  # Kitty!
   programs.kitty = {
     enable = true;
     extraConfig = ''
-    include ./kitty-colors.conf
+      include ./kitty-colors.conf
     '';
     settings = {
-    # Fonts
-      font_family = "JetBrainsMono Nerd Font Mono";  
+      # Fonts
+      font_family = "JetBrainsMono Nerd Font Mono";
       font_size = 11;
       disable_ligatures = true; # Prevents spacing glitches
       #??? symbol_map  U+60c-U+6cc,U+fb56-U+fefc Vazir Code Hack
@@ -90,12 +94,12 @@
       # Tabs
       tab_bar_style = "fade";
       tab_fade = 1;
-      active_tab_font_style =  "bold";
+      active_tab_font_style = "bold";
       inactive_tab_font_style = "bold";
-    }; 
+    };
   };
 
-      programs.helix = {
+  programs.helix = {
     enable = true;
     settings = {
       theme = lib.mkForce "ayu_transparent";
@@ -121,16 +125,19 @@
       languages = [
         {
           name = "nix";
-          language-servers = [ "nixd" "nil" ];
+          language-servers = [
+            "nixd"
+            "nil"
+          ];
         }
       ];
     };
-      themes = {
-        ayu_transparent = {
-          "inherits" = "ayu_evolve";
-          "ui.background" = { };
-        };
+    themes = {
+      ayu_transparent = {
+        "inherits" = "ayu_evolve";
+        "ui.background" = { };
       };
+    };
   };
 
   # Fish!
@@ -140,7 +147,7 @@
       if test -f ~/.config/user-dirs.dirs
         sed '/^#/d;s/^/set -x /;s/=/ /' ~/.config/user-dirs.dirs | source
       end
-  
+
       set -x QT_IM_MODULE fcitx
       set -x XMODIFIERS @im=fcitx
       set -x SDL_IM_MODULE fcitx
@@ -169,7 +176,7 @@
     ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
     ",ph" = "hx ~/dotfiles/hosts/pc/home/default.nix";
     ",c" = "hx ~/dotfiles/sharedconfig.nix";
-    
+
     ",f" = "hx ~/dotfiles/flake.nix";
     ",d" = "hx ~/dotfiles/home/de/default.nix";
     ",t" = "hx ~/dotfiles/home/de/term.nix";
@@ -183,9 +190,4 @@
   # Point to the external theme file
   home.file.".config/kitty/kitty-colors.conf".source = ./kitty-colors.conf;
 
-
-
-
-  
 }
-    

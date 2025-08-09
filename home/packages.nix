@@ -1,4 +1,11 @@
-{ config, lib, pkgs, system, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  system,
+  inputs,
+  ...
+}:
 
 {
   home.packages = with pkgs; [
@@ -16,7 +23,7 @@
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
     anki-bin
-     # Tools
+    # Tools
     ripdrag
     alacritty
     nix-search-tv
@@ -35,25 +42,25 @@
     hyprpicker
     htop
     gpu-screen-recorder
-    gpu-screen-recorder-gtk    
+    gpu-screen-recorder-gtk
     rustdesk-flutter
     pwvucontrol
-     # Compatibility        
+    # Compatibility
     nix-alien
     bottles
-    wine    
+    wine
     qemu
     quickemu
-     # Gaming
+    # Gaming
     lutris
-    gamescope            
+    gamescope
     ppsspp-sdl-wayland
     xivlauncher
     heroic
-    
+
     # (zen-browser.override {
     #   extraPrefsFiles = [
-    #     (builtins.fetchurl {  
+    #     (builtins.fetchurl {
     #       url = "https://raw.githubusercontent.com/MrOtherGuy/fx-autoconfig/master/program/config.js";
     #       sha256 = "1mx679fbc4d9x4bnqajqx5a95y1lfasvf90pbqkh9sm3ch945p40";
     #     })

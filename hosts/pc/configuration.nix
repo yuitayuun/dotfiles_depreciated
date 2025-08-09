@@ -2,16 +2,21 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ../../nixos
-    ];
-      # GTK Theme!
-   
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ../../nixos
+  ];
+  # GTK Theme!
+
   home-manager.users.yui.imports = [
     ./home
 
@@ -19,8 +24,7 @@
 
   hardware.graphics.enable = true;
   services.xserver.videoDrivers = [ "nvidia" ];
-  hardware.nvidia.open = true;  # see the note above
-
+  hardware.nvidia.open = true; # see the note above
 
   # List packages installed in system profile. To search, run:
   # $ nix search wget

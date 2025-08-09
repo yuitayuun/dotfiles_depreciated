@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }:
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 {
   hardware.keyboard.qmk.enable = true;
   # Via
@@ -18,11 +23,11 @@
       fcitx5-configtool
       fcitx5-gtk
       catppuccin-fcitx5
-     ];
+    ];
   };
   i18n.inputMethod.fcitx5.waylandFrontend = true;
-  
-    # Optional: set keyboard layout in X11/Wayland
+
+  # Optional: set keyboard layout in X11/Wayland
   services.xserver = {
     enable = true;
     xkb.layout = "pl";
@@ -35,7 +40,7 @@
     # {{{
     enable = true;
     keyboards.internal = {
-      devices = ["/dev/input/by-path/platform-i8042-serio-0-event-kbd"];
+      devices = [ "/dev/input/by-path/platform-i8042-serio-0-event-kbd" ];
       config = builtins.readFile ./kmonad.kbd;
     };
   };

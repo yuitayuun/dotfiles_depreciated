@@ -2,22 +2,27 @@
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
 
-{ lib,  inputs, config, pkgs, ... }:
+{
+  lib,
+  inputs,
+  config,
+  pkgs,
+  ...
+}:
 
 {
-  imports = [ 
-      # Include the results of the hardware scan.
-      ./hardware-configuration.nix
-      ./keyboard/keeb.nix
-      ../../nixos
-    ];
-      # GTK Theme!
+  imports = [
+    # Include the results of the hardware scan.
+    ./hardware-configuration.nix
+    ./keyboard/keeb.nix
+    ../../nixos
+  ];
+  # GTK Theme!
 
   home-manager.users.yui.imports = [
     ./home
 
   ];
-   
 
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 

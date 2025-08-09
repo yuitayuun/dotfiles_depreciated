@@ -1,6 +1,11 @@
 {
   nix.settings = {
-    trusted-users = [ "root" "@wheel" "yui" "yuitayuun" ];
+    trusted-users = [
+      "root"
+      "@wheel"
+      "yui"
+      "yuitayuun"
+    ];
     substituters = [
       "https://niri.cachix.org"
       # "https://bandithedoge.cachix.org"
@@ -9,7 +14,7 @@
       "https://nix-community.cachix.org"
       "https://nix-gaming.cachix.org"
 
-           ];
+    ];
     trusted-public-keys = [
       "niri.cachix.org-1:Wv0OmO7PsuocRKzfDoJ3mulSl7Z6oezYhGhR+3W2964="
       # "bandithedoge.cachix.org-1:ZtcHw1anyEa4t6H8m3o/ctYFrwYFPAwoENSvofamE6g="

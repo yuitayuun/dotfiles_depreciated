@@ -1,4 +1,11 @@
-{ config, lib, pkgs, system, inputs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  system,
+  inputs,
+  ...
+}:
 {
   programs.niri.settings.outputs = {
     "eDP-1" = {
@@ -13,8 +20,8 @@
       position = {
         x = 0;
         y = 0;
-      };   
-    };   
+      };
+    };
   };
 
   programs.way-edges.settings."widgets" = [
@@ -62,9 +69,9 @@
         "type" = "backlight";
       };
     }
-  ]; 
+  ];
 
-   services.swayidle = {
+  services.swayidle = {
     enable = true;
     timeouts = [
       {
@@ -87,17 +94,5 @@
       }
     ];
   };
-    
-
-
-
-
-
-
-
-
-
-
-
 
 }
