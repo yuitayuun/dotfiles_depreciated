@@ -1,5 +1,21 @@
 {
   "nodes": {
+    "bunny-yazi": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1752088144,
+        "narHash": "sha256-mdVCZMvoe9agrnX7aZeGf0oXGffE2Fhk9f1JNbir8+Q=",
+        "owner": "stelcodes",
+        "repo": "bunny.yazi",
+        "rev": "bd8a767220e606f2c68c7ea7d67d1c0b97b7daf3",
+        "type": "github"
+      },
+      "original": {
+        "owner": "stelcodes",
+        "repo": "bunny.yazi",
+        "type": "github"
+      }
+    },
     "catppuccin": {
       "inputs": {
         "nixpkgs": "nixpkgs"
@@ -269,6 +285,7 @@
     },
     "root": {
       "inputs": {
+        "bunny-yazi": "bunny-yazi",
         "catppuccin": "catppuccin",
         "home-manager": "home-manager",
         "niri": "niri",
