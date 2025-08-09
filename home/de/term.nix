@@ -155,9 +155,9 @@
     ",h" = "hx ~/dotfiles/home/default.nix";
     ",hp" = "hx ~/dotfiles/home/packages.nix";
     ",lc" = "hx ~/dotfiles/hosts/laptop/configuration.nix";
-    ",lv" = "hx ~/dotfiles/hosts/laptop/visual.nix";
+    ",lh" = "hx ~/dotfiles/hosts/laptop/home/default.nix";
     ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
-    ",pv" = "hx ~/dotfiles/hosts/pc/visual.nix";
+    ",ph" = "hx ~/dotfiles/hosts/pc/home/default.nix";
     ",c" = "hx ~/dotfiles/sharedconfig.nix";
     
     ",f" = "hx ~/dotfiles/flake.nix";
