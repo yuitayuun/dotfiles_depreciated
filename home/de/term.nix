@@ -75,7 +75,7 @@
           { key = "/",          path = "/",                                                   },
           { key = "t",          path = "/tmp",                                                },
           { key = "n",          path = "~/dotfiles",       desc = "doftiles!"                 },
-          { key = "~",          path = "~",                desc = "Home"                      },
+          { key = "h",          path = "~",                desc = "Home"                      },
           { key = "m",          path = "~/Music",          desc = "Music"                     },
           { key = "v",          path = "~/Videos",          desc = "Videos"                   },
           { key = "d",          path = "~/Desktop",        desc = "Desktop"                   },
