@@ -199,7 +199,7 @@
     ",lh" = "hx ~/dotfiles/hosts/laptop/home/default.nix";
     ",pc" = "hx ~/dotfiles/hosts/pc/configuration.nix";
     ",ph" = "hx ~/dotfiles/hosts/pc/home/default.nix";
-    ",c" = "hx ~/dotfiles/sharedconfig.nix";
+    ",c" = "hx ~/dotfiles/nixos/default.nix";
 
     ",f" = "hx ~/dotfiles/flake.nix";
     ",d" = "hx ~/dotfiles/home/de/default.nix";
