@@ -10,6 +10,7 @@
 {
   home.packages = with pkgs; [
     # Communicators
+    osu-lazer-bin
     dorion
     equibop
     fractal
@@ -24,6 +25,7 @@
     jetbrains.pycharm-professional
     anki-bin
     # Tools
+    ncdu
     ripdrag
     alacritty
     nix-search-tv
@@ -67,4 +69,6 @@
     #   ];
     # })
   ];
+  services.swaync.enable = true;
+
 }
