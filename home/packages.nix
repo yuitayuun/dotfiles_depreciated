@@ -10,7 +10,7 @@
 {
   home.packages = with pkgs; [
     # Communicators
-    osu-lazer-bin
+    wineasio
     dorion
     equibop
     fractal
@@ -54,6 +54,7 @@
     qemu
     quickemu
     # Gaming
+    osu-lazer-bin
     lutris
     gamescope
     ppsspp-sdl-wayland

@@ -191,6 +191,7 @@
     nmre = "nmcli device wifi rescan";
     niriconf = "hx /home/yui/.config/niri/config.kdl";
     ctt = "exec /home/yuitayuun/Downloads/ClickTap.UX-linux-x64/ClickTap.UX.Desktop";
+    
     ",s" = "nh os switch ~/dotfiles";
     ",u" = "nh os switch ~/dotfiles --update";
     ",h" = "hx ~/dotfiles/home/default.nix";
@@ -209,6 +210,7 @@
     ",k" = "hx ~/dotfiles/keeb.nix";
     ",g" = "lazygit -p ~/dotfiles";
     "garbage" = "nix-collect-garbage -d";
+    "we" = "pkill -f way-edges; way-edges";
   };
 
   # Point to the external theme file
