@@ -20,7 +20,7 @@
         width = 2560;
         height = 1440;
       };
-      scale = 1.5;
+      scale = 1.25;
       position = {
         x = 2561;
         y = 0;
