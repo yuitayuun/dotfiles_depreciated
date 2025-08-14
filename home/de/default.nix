@@ -572,7 +572,7 @@
           "preset" = {
             "type" = "custom";
             "update-interval" = 1000;
-            "update-command" = "/home/yui/.config/way-edges/battery.sh";
+            "update-command" = "./battery.sh";
           };
         }
         {
@@ -715,7 +715,7 @@
     };
   };
 
-  home.file.".config/way-edges/battery.sh".source = ./battery.sh;
+  # home.file.".config/way-edges/battery.sh".source = ./battery.sh;
 
   catppuccin = {
     enable = true;
