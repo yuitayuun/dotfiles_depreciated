@@ -188,6 +188,12 @@
     };
   };
 
+  # Enables Syncthing as a service
+  services.syncthing = {
+    enable = true;
+    openDefaultPorts = true;
+  };
+
   #overwriting files so nh doesnt tweak out
   home-manager.backupFileExtension = "backup";
 
