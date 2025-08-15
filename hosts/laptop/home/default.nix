@@ -17,8 +17,8 @@
     };
     "HDMI-A-1" = {
       mode = {
-        width = 2560;
-        height = 1440;
+        width = 1920;
+        height = 1080;
       };
       scale = 1.25;
       position = {
