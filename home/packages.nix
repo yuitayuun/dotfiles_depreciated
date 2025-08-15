@@ -20,6 +20,7 @@
     magnetic-catppuccin-gtk
     swaybg
     # Work
+    logseq
     obsidian
     onlyoffice-bin_latest
     jetbrains.pycharm-professional
@@ -29,6 +30,7 @@
     ripdrag
     alacritty
     nix-search-tv
+    nix-index
     unrar
     isoimagewriter
     cider
