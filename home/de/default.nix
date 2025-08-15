@@ -104,10 +104,11 @@
       { command = [ "way-edges" ]; }
       { command = [ "swww-daemon" ]; }
       {
-        command = [
-          "syncthing"
-          "--no-browser"
-        ];
+      # Disabling to run it as a service instead
+        # command = [
+        #   "syncthing"
+        #   "--no-browser"
+        # ];
       }
       { command = [ "otd-daemon" ]; }
       {
