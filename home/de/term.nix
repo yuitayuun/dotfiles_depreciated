@@ -85,6 +85,7 @@
           { key = { "l", "b" }, path = "~/.local/bin",     desc = "Local bin"                 },
           { key = { "l", "t" }, path = "~/.local/state",   desc = "Local state"               },
           { key = "s",          path = "~/.local/share/Steam/steamapps/common", desc = "Steam"},
+          { key = "u",          path = "~/Documents/UniGraph", desc = "Logseq dir"            },
           -- key and path attributes are required, desc is optional
         },
         desc_strategy = "path", -- If desc isn't present, use "path" or "filename", default is "path"
