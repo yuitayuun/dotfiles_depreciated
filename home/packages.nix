@@ -26,6 +26,7 @@
     jetbrains.pycharm-professional
     anki-bin
     # Tools
+    browsh
     ncdu
     ripdrag
     alacritty
