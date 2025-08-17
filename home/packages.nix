@@ -51,6 +51,8 @@
     rustdesk-flutter
     pwvucontrol
     # Compatibility
+    yabridge
+    yabridgectl
     nix-alien
     bottles
     wine
