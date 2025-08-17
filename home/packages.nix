@@ -55,6 +55,7 @@
     yabridgectl
     nix-alien
     bottles
+    winetricks
     wine
     qemu
     quickemu

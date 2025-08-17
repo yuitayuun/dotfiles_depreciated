@@ -16,6 +16,7 @@
     ./hardware-configuration.nix
     ./keyboard/keeb.nix
     ../../nixos
+    ./musnix
   ];
   # GTK Theme!
 
