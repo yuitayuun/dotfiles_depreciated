@@ -11,18 +11,18 @@
     "eDP-1" = {
       scale = 1.25;
       position = {
-        x = 0;
+        x = 2134;
         y = 200;
       };
     };
     "HDMI-A-1" = {
       mode = {
-        width = 1920;
-        height = 1080;
+        width = 2560;
+        height = 1440;
       };
-      scale = 1.1;
+      scale = 1.2;
       position = {
-        x = 1536;
+        x = 0;
         y = 0;
       };
     };
@@ -98,5 +98,7 @@
       }
     ];
   };
+
+  home.file.".BitwigStudio/graphics-backend".text = "skia-gl";
 
 }
