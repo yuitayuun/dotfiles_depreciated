@@ -179,10 +179,21 @@
       set -x GLFW_IM_MODULE ibus
     '';
     interactiveShellInit = ''
-      ${pkgs.zoxide}/bin/zoxide init fish | source
+      ${pkgs.zoxide}/bin/zoxide init --cmd cd fish | source
     '';
   };
-
+  programs.eza = {
+    enable = true;
+    theme = "catppuccin";
+  };
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+    # flags = [
+    #   "--cmd cd"
+    # ];
+  };
+  
   home.shellAliases = {
     bt = "overskride";
     runat = "systemd-run --user --on-calendar";
@@ -192,7 +203,7 @@
     nmre = "nmcli device wifi rescan";
     niriconf = "hx /home/yui/.config/niri/config.kdl";
     ctt = "exec /home/yuitayuun/Downloads/ClickTap.UX-linux-x64/ClickTap.UX.Desktop";
-    
+    # ls = "eza"
     ",s" = "nh os switch ~/dotfiles";
     ",u" = "nh os switch ~/dotfiles --update";
     ",h" = "hx ~/dotfiles/home/default.nix";
