@@ -16,7 +16,6 @@
   environment.systemPackages = with pkgs; [
     walker
     pokemon-colorscripts-mac
-    zoxide
     nwg-look
     nixd
     nixfmt-rfc-style
@@ -35,7 +34,7 @@
     via
     vial
     qmk-udev-rules
-
+    
     # catppuccin-gtk
     # magnetic-catppuccin-gtk
     #nautilus
@@ -125,7 +124,7 @@
 
   # Enable CUPS to print documents.
   services.printing.enable = true;
-
+  musnix.enable = true;
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
