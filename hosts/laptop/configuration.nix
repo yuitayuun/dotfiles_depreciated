@@ -16,7 +16,6 @@
     ./hardware-configuration.nix
     ./keyboard/keeb.nix
     ../../nixos
-    ./musnix
   ];
   # GTK Theme!
 
@@ -25,6 +24,7 @@
 
   ];
 
+  powerManagement.cpuFreqGovernor = lib.mkForce "schedutil";
   hardware.cpu.intel.updateMicrocode = lib.mkDefault config.hardware.enableRedistributableFirmware;
 
   # Some programs need SUID wrappers, can be configured further or are
