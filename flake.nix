@@ -4,6 +4,13 @@
   inputs = {
     # NixOS official package source, using the nixos-25.05 branch here
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
+    musnix.url = "github:/musnix/musnix";
+    eza = {
+      url = "github:eza-community/eza";
+      inputs = {
+        nixpkgs.follows = "nixpkgs";
+      };
+    };
     bunny-yazi = {
       url = "github:stelcodes/bunny.yazi";
       flake = false;
@@ -48,7 +55,8 @@
             ./hosts/laptop/configuration.nix
             ./home/cachix.nix
             catppuccin.nixosModules.catppuccin
-            inputs.home-manager.nixosModules.home-manager
+            inputs.home-manager.nixosModules.home-manager            
+            inputs.musnix.nixosModules.musnix
             (
               { config, ... }:
               {
