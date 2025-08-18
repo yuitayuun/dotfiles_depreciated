@@ -53,10 +53,11 @@
     # Compatibility
     yabridge
     yabridgectl
+    wineWowPackages.yabridge
     nix-alien
     bottles
     winetricks
-    wine
+    # wineWowPackages.stable
     qemu
     quickemu
     # Gaming
