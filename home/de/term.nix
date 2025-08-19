@@ -225,6 +225,51 @@
     "we" = "pkill -f way-edges; way-edges";
   };
 
+   programs.starship = {
+      # {{{
+      enable = true;
+      settings = {
+        time = {
+          disabled = true;
+          format = "[$time]($style) ";
+        };
+        status = {
+          disabled = false;
+          format = "[$common_meaning$signal_name $status]($style) ";
+        };
+        git_metrics.disabled = false;
+
+        bun.symbol = " ";
+        c.symbol = " ";
+        cmake.symbol = " ";
+        container.symbol = "󰋘 ";
+        dart.symbol = " ";
+        deno.symbol = " ";
+        directory.read_only = " 󰌾";
+        fennel.symbol = " ";
+        git_branch.symbol = " ";
+        git_commit.tag_symbol = "󰓹 ";
+        golang.symbol = "";
+        haskell.symbol = " ";
+        hostname.ssh_symbol = " ";
+        java.symbol = " ";
+        julia.symbol = " ";
+        lua.symbol = "";
+        meson.symbol = "󰔷 ";
+        nim.symbol = " ";
+        nix_shell.symbol = " ";
+        nodejs.symbol = " ";
+        package.symbol = "󰏗 ";
+        python.symbol = " ";
+        r.symbol = " ";
+        ruby.symbol = " ";
+        rust.symbol = " ";
+        typst.symbol = " ";
+        zig.symbol = " ";
+      };
+    };
+    # }}}
+  
   # Point to the external theme file
   home.file.".config/kitty/kitty-colors.conf".source = ./kitty-colors.conf;
 
