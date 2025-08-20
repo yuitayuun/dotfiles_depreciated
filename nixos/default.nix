@@ -19,24 +19,15 @@
     "flakes"
   ];
   environment.systemPackages = with pkgs; [
-    walker
-    pokemon-colorscripts-mac
-    nwg-look
-    nixd
-    nixfmt-rfc-style
     nh
     opentabletdriver
     swaylock-effects
     syncthing
-    mpv
-    overskride
     blueman
     kanata
     evtest
     usbutils
-    bat
     gparted
-    via
     vial
     qmk-udev-rules
 
