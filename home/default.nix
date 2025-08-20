@@ -26,8 +26,8 @@
   # Imports
   imports = [
     ./packages.nix
-    ./de
-    ./de/term.nix
+    ./graphical
+    ./graphical/term.nix
     ./git.nix
     ./cachix.nix
   ];
