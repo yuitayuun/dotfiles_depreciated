@@ -25,6 +25,15 @@
     jetbrains.pycharm-professional
     anki-bin
     # Tools
+    via
+    bat
+    mpv
+    overskride
+    walker
+    pokemon-colorscripts-mac
+    nwg-look
+    nixd
+    nixfmt-rfc-style
     browsh
     ncdu
     ripdrag
