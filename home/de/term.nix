@@ -266,6 +266,8 @@
         rust.symbol = " ";
         typst.symbol = " ";
         zig.symbol = " ";
+
+        add_newline = false;
       };
       
       # presets = [
