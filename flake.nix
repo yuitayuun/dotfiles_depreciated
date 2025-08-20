@@ -23,6 +23,7 @@
     way-edges.url = "github:way-edges/way-edges";
     catppuccin.url = "github:catppuccin/nix";
     nix-alien.url = "github:thiagokokada/nix-alien";
+    nur-bandithedoge.url = "github:bandithedoge/nur-packages";
     # home-manager for user configs
     home-manager = {
       url = "github:nix-community/home-manager/";
@@ -67,11 +68,14 @@
                   system = config.nixpkgs.hostPlatform.system;
                 };
                 home-manager.users.yui = import ./home;
-                nixpkgs.overlays = [
+                nixpkgs.overlays = with inputs; [
                   inputs.nix-alien.overlays.default
                   (final: prev: {
                     zen-browser = inputs.zen-browser.packages.${prev.system}.default;
                   })
+                (_: prev: {
+                  bandithedoge = nur-bandithedoge.legacyPackages.${prev.system}
+                ;})
                 ];
               }
             )
@@ -135,10 +139,10 @@
               home-manager.useGlobalPkgs = true;
               home-manager.useUserPackages = true;
               home-manager.users.yui = import ./home;
-              nixpkgs.overlays = [
-                inputs.nix-alien.overlays.default
+              nixpkgs.overlays = with inputs; [
+                nix-alien.overlays.default
                 (final: prev: {
-                  zen-browser = inputs.zen-browser.packages.${prev.system}.default;
+                  zen-browser = zen-browser.packages.${prev.system}.default;
                 })
               ];
             }

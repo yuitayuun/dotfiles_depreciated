@@ -55,6 +55,11 @@
   # changes in each release.
   home.stateVersion = "25.11";
 
+  # MUSIC
+  home.sessionVariables.WINEFSYNC = "1";
+
+
+
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
 }

@@ -10,7 +10,6 @@
 {
   home.packages = with pkgs; [
     # Communicators
-    wineasio
     dorion
     equibop
     fractal
@@ -49,10 +48,7 @@
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     rustdesk-flutter
-    pwvucontrol
     # Compatibility
-    yabridge
-    yabridgectl
     wineWowPackages.yabridge
     nix-alien
     bottles
@@ -67,7 +63,13 @@
     ppsspp-sdl-wayland
     xivlauncher
     heroic
-
+    # Music and Audio!
+    bandithedoge.aida-x
+    yabridge
+    yabridgectl
+    wineasio
+    pwvucontrol
+    pavucontrol
     # (zen-browser.override {
     #   extraPrefsFiles = [
     #     (builtins.fetchurl {

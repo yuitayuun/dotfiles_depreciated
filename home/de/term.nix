@@ -261,12 +261,16 @@
         nodejs.symbol = " ";
         package.symbol = "󰏗 ";
         python.symbol = " ";
-        r.symbol = " ";
+        # r.symbol = " ";
         ruby.symbol = " ";
         rust.symbol = " ";
         typst.symbol = " ";
         zig.symbol = " ";
       };
+      
+      # presets = [
+      #   "./catppuccin-powerline.toml"
+      # ];
     };
     # }}}
   
