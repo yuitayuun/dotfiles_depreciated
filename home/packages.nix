@@ -30,16 +30,8 @@
     mpv
     overskride
     walker
-    pokemon-colorscripts-mac
     nwg-look
-    nixd
-    nixfmt-rfc-style
-    browsh
-    ncdu
-    ripdrag
     alacritty
-    nix-search-tv
-    nix-index
     unrar
     isoimagewriter
     cider
@@ -49,20 +41,25 @@
     brightnessctl
     gparted
     jq
-    fastfetch
     wlsunset
     bitwarden
     hyprpicker
-    htop
     gpu-screen-recorder
     gpu-screen-recorder-gtk
     rustdesk-flutter
+    # Tools (but cooler cuz in terminal)
+    pokemon-colorscripts-mac
+    ripdrag
+    browsh
+    ncdu
+    fastfetch
+    htop
+    
     # Compatibility
     wineWowPackages.yabridge
     nix-alien
     bottles
     winetricks
-    # wineWowPackages.stable
     qemu
     quickemu
     # Gaming
@@ -72,6 +69,11 @@
     ppsspp-sdl-wayland
     xivlauncher
     heroic
+    # Nix!
+    nixd
+    nixfmt-rfc-style
+    nix-search-tv
+    nix-index
     # Music and Audio!
     bandithedoge.aida-x
     yabridge
