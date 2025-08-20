@@ -95,34 +95,6 @@
               # Add root home-manager config here:
               home-manager.users.root = {
                 home.stateVersion = "25.11"; # <<< Add this
-                programs.helix = {
-                  enable = true;
-                  settings = {
-                    theme = nixpkgs.lib.mkForce "ayu_transparent";
-                    editor.scroll-lines = 7;
-                    editor.soft-wrap.enable = true;
-                    editor.lsp.display-inlay-hints = true;
-                    editor.auto-format = true;
-                  };
-                  languages = {
-                    language-server = {
-                      nixd.command = "nixd";
-                      nil.command = "nil";
-                    };
-                    languages = [
-                      {
-                        name = "nix";
-                        language-servers = [
-                          "nixd"
-                          "nil"
-                        ];
-                      }
-                    ];
-                  };
-                };
-
-                home.file.".config/helix/themes/ayu_transparent.toml".source = ./home/de/ayu_transparent.toml;
-
               };
             }
           ];
@@ -162,34 +134,6 @@
               # Add root home-manager config here:
               home-manager.users.root = {
                 home.stateVersion = "25.11"; # <<< Add this
-                programs.helix = {
-                  enable = true;
-                  settings = {
-                    theme = nixpkgs.lib.mkForce "ayu_transparent";
-                    editor.scroll-lines = 7;
-                    editor.soft-wrap.enable = true;
-                    editor.lsp.display-inlay-hints = true;
-                    editor.auto-format = true;
-                  };
-                  languages = {
-                    language-server = {
-                      nixd.command = "nixd";
-                      nil.command = "nil";
-                    };
-                    languages = [
-                      {
-                        name = "nix";
-                        language-servers = [
-                          "nixd"
-                          "nil"
-                        ];
-                      }
-                    ];
-                  };
-                };
-
-                home.file.".config/helix/themes/ayu_transparent.toml".source = ./home/de/ayu_transparent.toml;
-
               };
             }
           ];
